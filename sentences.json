@@ -1,0 +1,564 @@
+[
+  {
+    "id": 1,
+    "topic": "Daily Life",
+    "level": "beginner",
+    "text": "I usually make coffee before I check my phone in the morning.",
+    "focus": [
+      "usually",
+      "coffee",
+      "before",
+      "morning"
+    ],
+    "focus_note": "weak forms, sentence rhythm",
+    "useful_expression": "make coffee"
+  },
+  {
+    "id": 2,
+    "topic": "Daily Life",
+    "level": "intermediate",
+    "text": "I was running late this morning, so I grabbed something quick and headed straight out the door.",
+    "focus": [
+      "running late",
+      "grabbed",
+      "something quick",
+      "headed straight out"
+    ],
+    "focus_note": "linking, reductions, rhythm",
+    "useful_expression": "run late / head straight out"
+  },
+  {
+    "id": 3,
+    "topic": "Daily Life",
+    "level": "advanced",
+    "text": "I had every intention of getting an early start, but I somehow ended up wasting half the morning on little things.",
+    "focus": [
+      "every intention",
+      "getting an early start",
+      "ended up",
+      "little things"
+    ],
+    "focus_note": "stress shifts, connected speech",
+    "useful_expression": "have every intention of / end up -ing"
+  },
+  {
+    "id": 4,
+    "topic": "Daily Life",
+    "level": "native",
+    "text": "By the time I realized how much time I had burned, the whole morning had pretty much gotten away from me.",
+    "focus": [
+      "by the time",
+      "realized",
+      "pretty much",
+      "gotten away from me"
+    ],
+    "focus_note": "natural reductions, conversational rhythm",
+    "useful_expression": "get away from someone"
+  },
+  {
+    "id": 5,
+    "topic": "Work & Study",
+    "level": "beginner",
+    "text": "My manager gave me some helpful advice before the meeting.",
+    "focus": [
+      "manager",
+      "helpful",
+      "advice",
+      "meeting"
+    ],
+    "focus_note": "word stress, final consonants",
+    "useful_expression": "give someone advice"
+  },
+  {
+    "id": 6,
+    "topic": "Work & Study",
+    "level": "intermediate",
+    "text": "I was not sure how to handle the situation, so my manager talked me through what I needed to do.",
+    "focus": [
+      "handle",
+      "situation",
+      "talked me through",
+      "needed to"
+    ],
+    "focus_note": "TH, linking, weak forms",
+    "useful_expression": "talk someone through something"
+  },
+  {
+    "id": 7,
+    "topic": "Work & Study",
+    "level": "advanced",
+    "text": "Even though I had prepared for the presentation, I ended up improvising when several unexpected questions came up.",
+    "focus": [
+      "prepared",
+      "presentation",
+      "ended up improvising",
+      "came up"
+    ],
+    "focus_note": "multi-syllable stress, linking",
+    "useful_expression": "end up -ing / come up"
+  },
+  {
+    "id": 8,
+    "topic": "Work & Study",
+    "level": "native",
+    "text": "Looking back, I probably overthought the whole thing, because once the conversation got going, everything fell into place naturally.",
+    "focus": [
+      "looking back",
+      "overthought",
+      "got going",
+      "fell into place"
+    ],
+    "focus_note": "reductions, thought groups, intonation",
+    "useful_expression": "fall into place"
+  },
+  {
+    "id": 9,
+    "topic": "Relationships",
+    "level": "beginner",
+    "text": "My best friend always knows how to make me feel better.",
+    "focus": [
+      "best friend",
+      "always",
+      "make me",
+      "better"
+    ],
+    "focus_note": "linking, flap T",
+    "useful_expression": "make someone feel better"
+  },
+  {
+    "id": 10,
+    "topic": "Relationships",
+    "level": "intermediate",
+    "text": "We did not agree at first, but we talked it out and eventually understood where the other person was coming from.",
+    "focus": [
+      "agree",
+      "talked it out",
+      "eventually",
+      "coming from"
+    ],
+    "focus_note": "linking, rhythm",
+    "useful_expression": "talk it out / see where someone is coming from"
+  },
+  {
+    "id": 11,
+    "topic": "Relationships",
+    "level": "advanced",
+    "text": "I did not want to make a big deal out of it, but the way she brushed off my concern honestly bothered me.",
+    "focus": [
+      "make a big deal",
+      "brushed off",
+      "concern",
+      "honestly"
+    ],
+    "focus_note": "clusters, reductions, contrastive stress",
+    "useful_expression": "make a big deal out of / brush off"
+  },
+  {
+    "id": 12,
+    "topic": "Relationships",
+    "level": "native",
+    "text": "We have known each other long enough to tell when something is off, even if neither of us says it out loud.",
+    "focus": [
+      "known each other",
+      "long enough",
+      "something is off",
+      "out loud"
+    ],
+    "focus_note": "linking, subtle stress, reductions",
+    "useful_expression": "something is off"
+  },
+  {
+    "id": 13,
+    "topic": "Travel",
+    "level": "beginner",
+    "text": "Our hotel was close to the station, so getting around was easy.",
+    "focus": [
+      "hotel",
+      "station",
+      "getting around",
+      "easy"
+    ],
+    "focus_note": "word stress, flap T",
+    "useful_expression": "get around"
+  },
+  {
+    "id": 14,
+    "topic": "Travel",
+    "level": "intermediate",
+    "text": "Our flight was delayed, but the airline staff kept us updated and helped us figure out our options.",
+    "focus": [
+      "flight",
+      "delayed",
+      "kept us updated",
+      "figure out"
+    ],
+    "focus_note": "clusters, linking",
+    "useful_expression": "keep someone updated / figure out"
+  },
+  {
+    "id": 15,
+    "topic": "Travel",
+    "level": "advanced",
+    "text": "We almost missed the last train because we underestimated how long it would take to get back across town.",
+    "focus": [
+      "almost missed",
+      "underestimated",
+      "how long it would take",
+      "across town"
+    ],
+    "focus_note": "consonant clusters, reductions",
+    "useful_expression": "underestimate / across town"
+  },
+  {
+    "id": 16,
+    "topic": "Travel",
+    "level": "native",
+    "text": "The trip did not go exactly according to plan, but those unexpected detours ended up being the parts we talked about most.",
+    "focus": [
+      "according to plan",
+      "unexpected detours",
+      "ended up being",
+      "talked about most"
+    ],
+    "focus_note": "thought groups, natural emphasis",
+    "useful_expression": "go according to plan"
+  },
+  {
+    "id": 17,
+    "topic": "Food & Dining",
+    "level": "beginner",
+    "text": "I ordered the pasta because the waiter said it was popular.",
+    "focus": [
+      "ordered",
+      "pasta",
+      "waiter",
+      "popular"
+    ],
+    "focus_note": "flap T, word stress",
+    "useful_expression": "order something because"
+  },
+  {
+    "id": 18,
+    "topic": "Food & Dining",
+    "level": "intermediate",
+    "text": "The place was packed, but the food came out quickly and everything tasted much better than I expected.",
+    "focus": [
+      "packed",
+      "came out",
+      "quickly",
+      "better than I expected"
+    ],
+    "focus_note": "clusters, linking, reductions",
+    "useful_expression": "be packed / come out"
+  },
+  {
+    "id": 19,
+    "topic": "Food & Dining",
+    "level": "advanced",
+    "text": "I usually play it safe when I order, but this time I went with the server recommendation and was pleasantly surprised.",
+    "focus": [
+      "play it safe",
+      "went with",
+      "recommendation",
+      "pleasantly surprised"
+    ],
+    "focus_note": "phrase stress, linking",
+    "useful_expression": "play it safe / go with"
+  },
+  {
+    "id": 20,
+    "topic": "Food & Dining",
+    "level": "native",
+    "text": "The dish sounded a little strange on paper, but all the flavors somehow came together without any one ingredient taking over.",
+    "focus": [
+      "on paper",
+      "came together",
+      "ingredient",
+      "taking over"
+    ],
+    "focus_note": "natural phrasing, stress timing",
+    "useful_expression": "come together / take over"
+  },
+  {
+    "id": 21,
+    "topic": "Health & Wellness",
+    "level": "beginner",
+    "text": "I felt tired all day, so I decided to go to bed early.",
+    "focus": [
+      "felt tired",
+      "decided",
+      "go to bed",
+      "early"
+    ],
+    "focus_note": "final consonants, reductions",
+    "useful_expression": "go to bed early"
+  },
+  {
+    "id": 22,
+    "topic": "Health & Wellness",
+    "level": "intermediate",
+    "text": "I thought the treatment would be uncomfortable, but the therapist talked me through the whole process and made everything feel much easier.",
+    "focus": [
+      "thought",
+      "treatment",
+      "therapist",
+      "talked me through",
+      "whole"
+    ],
+    "focus_note": "TH, R linking, sentence rhythm",
+    "useful_expression": "talk someone through something"
+  },
+  {
+    "id": 23,
+    "topic": "Health & Wellness",
+    "level": "advanced",
+    "text": "Even though the swelling usually goes down within a few days, you should contact the clinic if anything feels unusually painful or difficult to manage.",
+    "focus": [
+      "even though",
+      "swelling",
+      "within",
+      "unusually painful",
+      "difficult to manage"
+    ],
+    "focus_note": "TH, stress, weak forms",
+    "useful_expression": "go down / difficult to manage"
+  },
+  {
+    "id": 24,
+    "topic": "Health & Wellness",
+    "level": "native",
+    "text": "I had been putting off the appointment for weeks, mostly because I was worried they would tell me something I did not want to hear.",
+    "focus": [
+      "putting off",
+      "appointment",
+      "mostly because",
+      "did not want to hear"
+    ],
+    "focus_note": "reductions, emotional emphasis",
+    "useful_expression": "put off an appointment"
+  },
+  {
+    "id": 25,
+    "topic": "Shopping & Services",
+    "level": "beginner",
+    "text": "I asked for a different size because this one was too small.",
+    "focus": [
+      "asked for",
+      "different size",
+      "because",
+      "too small"
+    ],
+    "focus_note": "clusters, reductions",
+    "useful_expression": "ask for a different size"
+  },
+  {
+    "id": 26,
+    "topic": "Shopping & Services",
+    "level": "intermediate",
+    "text": "The item looked different from the photos, so I contacted customer service and asked if I could return it.",
+    "focus": [
+      "looked different",
+      "contacted",
+      "customer service",
+      "return it"
+    ],
+    "focus_note": "linking, final consonants",
+    "useful_expression": "contact customer service / return an item"
+  },
+  {
+    "id": 27,
+    "topic": "Shopping & Services",
+    "level": "advanced",
+    "text": "I was ready to give up on the order, but the support agent sorted everything out faster than I expected.",
+    "focus": [
+      "give up on",
+      "support agent",
+      "sorted everything out",
+      "expected"
+    ],
+    "focus_note": "linking, stress groups",
+    "useful_expression": "sort something out"
+  },
+  {
+    "id": 28,
+    "topic": "Shopping & Services",
+    "level": "native",
+    "text": "The refund process was surprisingly painless, which honestly made me more willing to shop with them again.",
+    "focus": [
+      "refund process",
+      "surprisingly painless",
+      "honestly",
+      "willing to"
+    ],
+    "focus_note": "multi-syllable stress, reductions",
+    "useful_expression": "be willing to"
+  },
+  {
+    "id": 29,
+    "topic": "Opinions & Decisions",
+    "level": "beginner",
+    "text": "I need a little more time before I make a decision.",
+    "focus": [
+      "need a",
+      "little more time",
+      "before",
+      "decision"
+    ],
+    "focus_note": "reductions, word stress",
+    "useful_expression": "make a decision"
+  },
+  {
+    "id": 30,
+    "topic": "Opinions & Decisions",
+    "level": "intermediate",
+    "text": "There are three things you should think about before making a decision: the possible risks, the expected results, and the amount of recovery time.",
+    "focus": [
+      "three things",
+      "think about",
+      "possible risks",
+      "expected results",
+      "recovery time"
+    ],
+    "focus_note": "TH, list intonation, stress",
+    "useful_expression": "think about / make a decision"
+  },
+  {
+    "id": 31,
+    "topic": "Opinions & Decisions",
+    "level": "advanced",
+    "text": "I can see why the idea sounds appealing, but I am not convinced the benefits outweigh the potential downsides.",
+    "focus": [
+      "sounds appealing",
+      "not convinced",
+      "benefits outweigh",
+      "potential downsides"
+    ],
+    "focus_note": "contrastive stress, clusters",
+    "useful_expression": "outweigh the downsides"
+  },
+  {
+    "id": 32,
+    "topic": "Opinions & Decisions",
+    "level": "native",
+    "text": "I was on the fence at first, but once I looked at the bigger picture, the decision became a lot easier to justify.",
+    "focus": [
+      "on the fence",
+      "looked at",
+      "bigger picture",
+      "justify"
+    ],
+    "focus_note": "idiom rhythm, reductions",
+    "useful_expression": "be on the fence / look at the bigger picture"
+  },
+  {
+    "id": 33,
+    "topic": "Social Situations",
+    "level": "beginner",
+    "text": "I met a few new people at the party last night.",
+    "focus": [
+      "met a few",
+      "new people",
+      "party",
+      "last night"
+    ],
+    "focus_note": "flap T, linking",
+    "useful_expression": "meet new people"
+  },
+  {
+    "id": 34,
+    "topic": "Social Situations",
+    "level": "intermediate",
+    "text": "I did not know many people there, so I started a conversation with someone standing next to me.",
+    "focus": [
+      "did not know",
+      "started a conversation",
+      "someone standing",
+      "next to me"
+    ],
+    "focus_note": "reductions, linking",
+    "useful_expression": "start a conversation"
+  },
+  {
+    "id": 35,
+    "topic": "Social Situations",
+    "level": "advanced",
+    "text": "I am usually awkward at networking events, but once I get past the small talk, I actually enjoy meeting people.",
+    "focus": [
+      "usually awkward",
+      "networking events",
+      "get past",
+      "small talk"
+    ],
+    "focus_note": "stress, reductions, connected speech",
+    "useful_expression": "get past something / small talk"
+  },
+  {
+    "id": 36,
+    "topic": "Social Situations",
+    "level": "native",
+    "text": "The conversation could have been uncomfortable, but she had a way of putting everyone at ease without trying too hard.",
+    "focus": [
+      "could have been",
+      "putting everyone at ease",
+      "without trying",
+      "too hard"
+    ],
+    "focus_note": "modal reductions, natural pacing",
+    "useful_expression": "put someone at ease"
+  },
+  {
+    "id": 37,
+    "topic": "Stories & Experiences",
+    "level": "beginner",
+    "text": "I lost my phone once, but someone found it and called me.",
+    "focus": [
+      "lost my phone",
+      "someone found it",
+      "called me"
+    ],
+    "focus_note": "final consonants, linking",
+    "useful_expression": "find something and call someone"
+  },
+  {
+    "id": 38,
+    "topic": "Stories & Experiences",
+    "level": "intermediate",
+    "text": "I thought I had ruined the whole trip, but what happened next turned into one of my favorite memories.",
+    "focus": [
+      "thought",
+      "ruined",
+      "what happened next",
+      "turned into"
+    ],
+    "focus_note": "TH, linking, sentence stress",
+    "useful_expression": "turn into"
+  },
+  {
+    "id": 39,
+    "topic": "Stories & Experiences",
+    "level": "advanced",
+    "text": "At the time it felt like a complete disaster, but looking back, it taught me to stay calm when things do not go as planned.",
+    "focus": [
+      "at the time",
+      "complete disaster",
+      "looking back",
+      "go as planned"
+    ],
+    "focus_note": "thought groups, contrastive stress",
+    "useful_expression": "go as planned"
+  },
+  {
+    "id": 40,
+    "topic": "Stories & Experiences",
+    "level": "native",
+    "text": "The funny thing is that I barely remember what went wrong anymore, but I can still picture exactly how everyone reacted.",
+    "focus": [
+      "funny thing is",
+      "barely remember",
+      "went wrong",
+      "picture exactly"
+    ],
+    "focus_note": "reductions, conversational rhythm",
+    "useful_expression": "the funny thing is / go wrong"
+  }
+]
