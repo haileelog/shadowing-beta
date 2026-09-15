@@ -10,7 +10,7 @@ except Exception:
     speechsdk = None
 
 ROOT=Path(__file__).resolve().parent
-APP_VERSION='1.3.11'
+APP_VERSION='1.4.0'
 CACHE=ROOT/'_cache'/'tts'; CACHE.mkdir(parents=True,exist_ok=True)
 SENTENCES=json.loads((ROOT/'sentences.json').read_text(encoding='utf-8'))
 AZURE_KEY=os.getenv('AZURE_SPEECH_KEY','').strip(); AZURE_REGION=os.getenv('AZURE_SPEECH_REGION','').strip()
@@ -194,11 +194,11 @@ def build_feedback(azure, baseline, ref):
         improved=sorted(delta.items(),key=lambda kv:kv[1],reverse=True)
         if improved and improved[0][1]>0:
             label={'clarity':'명료도','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[improved[0][0]]
-            strengths.insert(0,f'첫 시도보다 {label}가 {improved[0][1]:+.1f}점 좋아졌어요.')
+            strengths.insert(0,f'첫 시도보다 {subject_form(label)} {improved[0][1]:+.1f}점 좋아졌어요.')
         worsened=sorted(delta.items(),key=lambda kv:kv[1])
         if worsened and worsened[0][1]<0:
             label={'clarity':'명료도','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[worsened[0][0]]
-            needs.insert(0,f'첫 시도와 비교하면 {label}가 {abs(worsened[0][1]):.1f}점 낮아졌어요. 이번에는 이 부분을 조금 더 천천히 다듬어 보세요.')
+            needs.insert(0,f'첫 시도와 비교하면 {subject_form(label)} {abs(worsened[0][1]):.1f}점 낮아졌어요. 이번에는 이 부분을 조금 더 천천히 다듬어 보세요.')
 
     details={
         'azure':{'accuracy':acc,'fluency':flu,'completeness':comp,'prosody':pros},
@@ -207,6 +207,15 @@ def build_feedback(azure, baseline, ref):
         'focusScores':[{'text':p,'score':round(s,1)} for s,p in focus_rank]
     }
     return metrics,overall,strengths[:4],needs[:4],tips[:4],weak_terms,details
+
+
+def subject_form(label):
+    """Attach the natural Korean subject particle (이/가) to a Korean label."""
+    for ch in reversed(label):
+        if '가' <= ch <= '힣':
+            jong=(ord(ch)-0xAC00)%28
+            return label + ('이' if jong else '가')
+    return label + '가'
 
 def preview_feedback(previous):
     base={'clarity':7.3,'pronunciation':7.1,'stress':7.2,'rhythm':7.0,'connection':7.2}
@@ -367,9 +376,9 @@ class H(SimpleHTTPRequestHandler):
             m,o,g,w,t,f,details=build_feedback(azure,body.get('baseline'),ref)
             warning=None
             if coverage < .55:
-                warning='일부 단어가 실제 발음과 다르게 인식됐어요. 비원어민 발음 특성일 수 있어 채점은 계속 진행했습니다.'
+                warning='일부 단어가 또렷하게 인식되지 않았어요. 단어를 빠뜨리지 않고 끝까지 읽었는지 한 번 확인해 보세요.'
             elif coverage < .78:
-                warning='몇몇 단어가 다르게 인식됐지만, 발음 평가는 정상적으로 진행했습니다.'
+                warning='몇몇 단어가 또렷하게 인식되지 않았어요. 단어를 빠뜨리지 않고 끝까지 읽었는지 한 번 확인해 보세요.'
             log('ASSESS-SUCCESS',{'requestId':request_id,'attempt':attempt,'overall':o,'metrics':m,'coverage':round(coverage,3),'transcript':plain_text,'azure':details.get('azure'),'wordP25':details.get('wordP25'),'phonemeP20':details.get('phonemeP20'),'weakWords':[{'word':x.get('word'),'accuracy':x.get('accuracy'),'error':x.get('error')} for x in details.get('weakWords',[])[:4]]})
             log('COMMIT-DEFERRED',{'requestId':request_id,'attempt':attempt,'reason':'DB not connected yet; browser keeps successful attempt only'})
             return self.j(200,{'metrics':m,'overall':o,'good':g,'weak':w,'tip':t,'focusTerms':f,'warning':warning,'details':details,'azure':{'accuracy':pa.get('AccuracyScore'),'fluency':pa.get('FluencyScore'),'completeness':pa.get('CompletenessScore'),'transcriptCoverage':round(coverage*100,1),'prosody':pa.get('ProsodyScore'),'recognizedText':plain_text}})
