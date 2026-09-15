@@ -11,7 +11,11 @@
       "morning"
     ],
     "focus_note": "weak forms, sentence rhythm",
-    "useful_expression": "make coffee"
+    "useful_expression": "make coffee",
+    "categories": [
+      "Daily Life"
+    ],
+    "primary_category": "Daily Life"
   },
   {
     "id": 2,
@@ -25,7 +29,11 @@
       "headed straight out"
     ],
     "focus_note": "linking, reductions, rhythm",
-    "useful_expression": "run late / head straight out"
+    "useful_expression": "run late / head straight out",
+    "categories": [
+      "Daily Life"
+    ],
+    "primary_category": "Daily Life"
   },
   {
     "id": 3,
@@ -39,7 +47,11 @@
       "little things"
     ],
     "focus_note": "stress shifts, connected speech",
-    "useful_expression": "have every intention of / end up -ing"
+    "useful_expression": "have every intention of / end up -ing",
+    "categories": [
+      "Daily Life"
+    ],
+    "primary_category": "Daily Life"
   },
   {
     "id": 4,
@@ -53,7 +65,11 @@
       "gotten away from me"
     ],
     "focus_note": "natural reductions, conversational rhythm",
-    "useful_expression": "get away from someone"
+    "useful_expression": "get away from someone",
+    "categories": [
+      "Daily Life"
+    ],
+    "primary_category": "Daily Life"
   },
   {
     "id": 5,
@@ -67,7 +83,11 @@
       "meeting"
     ],
     "focus_note": "word stress, final consonants",
-    "useful_expression": "give someone advice"
+    "useful_expression": "give someone advice",
+    "categories": [
+      "Work & Study"
+    ],
+    "primary_category": "Work & Study"
   },
   {
     "id": 6,
@@ -81,7 +101,11 @@
       "needed to"
     ],
     "focus_note": "TH, linking, weak forms",
-    "useful_expression": "talk someone through something"
+    "useful_expression": "talk someone through something",
+    "categories": [
+      "Work & Study"
+    ],
+    "primary_category": "Work & Study"
   },
   {
     "id": 7,
@@ -95,7 +119,11 @@
       "came up"
     ],
     "focus_note": "multi-syllable stress, linking",
-    "useful_expression": "end up -ing / come up"
+    "useful_expression": "end up -ing / come up",
+    "categories": [
+      "Work & Study"
+    ],
+    "primary_category": "Work & Study"
   },
   {
     "id": 8,
@@ -109,7 +137,11 @@
       "fell into place"
     ],
     "focus_note": "reductions, thought groups, intonation",
-    "useful_expression": "fall into place"
+    "useful_expression": "fall into place",
+    "categories": [
+      "Work & Study"
+    ],
+    "primary_category": "Work & Study"
   },
   {
     "id": 9,
@@ -123,7 +155,11 @@
       "better"
     ],
     "focus_note": "linking, flap T",
-    "useful_expression": "make someone feel better"
+    "useful_expression": "make someone feel better",
+    "categories": [
+      "Relationships"
+    ],
+    "primary_category": "Relationships"
   },
   {
     "id": 10,
@@ -137,7 +173,11 @@
       "coming from"
     ],
     "focus_note": "linking, rhythm",
-    "useful_expression": "talk it out / see where someone is coming from"
+    "useful_expression": "talk it out / see where someone is coming from",
+    "categories": [
+      "Relationships"
+    ],
+    "primary_category": "Relationships"
   },
   {
     "id": 11,
@@ -151,7 +191,11 @@
       "honestly"
     ],
     "focus_note": "clusters, reductions, contrastive stress",
-    "useful_expression": "make a big deal out of / brush off"
+    "useful_expression": "make a big deal out of / brush off",
+    "categories": [
+      "Relationships"
+    ],
+    "primary_category": "Relationships"
   },
   {
     "id": 12,
@@ -165,7 +209,11 @@
       "out loud"
     ],
     "focus_note": "linking, subtle stress, reductions",
-    "useful_expression": "something is off"
+    "useful_expression": "something is off",
+    "categories": [
+      "Relationships"
+    ],
+    "primary_category": "Relationships"
   },
   {
     "id": 13,
@@ -179,7 +227,11 @@
       "easy"
     ],
     "focus_note": "word stress, flap T",
-    "useful_expression": "get around"
+    "useful_expression": "get around",
+    "categories": [
+      "Travel"
+    ],
+    "primary_category": "Travel"
   },
   {
     "id": 14,
@@ -193,7 +245,11 @@
       "figure out"
     ],
     "focus_note": "clusters, linking",
-    "useful_expression": "keep someone updated / figure out"
+    "useful_expression": "keep someone updated / figure out",
+    "categories": [
+      "Travel"
+    ],
+    "primary_category": "Travel"
   },
   {
     "id": 15,
@@ -207,7 +263,11 @@
       "across town"
     ],
     "focus_note": "consonant clusters, reductions",
-    "useful_expression": "underestimate / across town"
+    "useful_expression": "underestimate / across town",
+    "categories": [
+      "Travel"
+    ],
+    "primary_category": "Travel"
   },
   {
     "id": 16,
@@ -221,7 +281,11 @@
       "talked about most"
     ],
     "focus_note": "thought groups, natural emphasis",
-    "useful_expression": "go according to plan"
+    "useful_expression": "go according to plan",
+    "categories": [
+      "Travel"
+    ],
+    "primary_category": "Travel"
   },
   {
     "id": 17,
@@ -235,7 +299,11 @@
       "popular"
     ],
     "focus_note": "flap T, word stress",
-    "useful_expression": "order something because"
+    "useful_expression": "order something because",
+    "categories": [
+      "Food & Dining"
+    ],
+    "primary_category": "Food & Dining"
   },
   {
     "id": 18,
@@ -249,7 +317,11 @@
       "better than I expected"
     ],
     "focus_note": "clusters, linking, reductions",
-    "useful_expression": "be packed / come out"
+    "useful_expression": "be packed / come out",
+    "categories": [
+      "Food & Dining"
+    ],
+    "primary_category": "Food & Dining"
   },
   {
     "id": 19,
@@ -263,7 +335,11 @@
       "pleasantly surprised"
     ],
     "focus_note": "phrase stress, linking",
-    "useful_expression": "play it safe / go with"
+    "useful_expression": "play it safe / go with",
+    "categories": [
+      "Food & Dining"
+    ],
+    "primary_category": "Food & Dining"
   },
   {
     "id": 20,
@@ -277,7 +353,11 @@
       "taking over"
     ],
     "focus_note": "natural phrasing, stress timing",
-    "useful_expression": "come together / take over"
+    "useful_expression": "come together / take over",
+    "categories": [
+      "Food & Dining"
+    ],
+    "primary_category": "Food & Dining"
   },
   {
     "id": 21,
@@ -291,7 +371,11 @@
       "early"
     ],
     "focus_note": "final consonants, reductions",
-    "useful_expression": "go to bed early"
+    "useful_expression": "go to bed early",
+    "categories": [
+      "Health & Wellness"
+    ],
+    "primary_category": "Health & Wellness"
   },
   {
     "id": 22,
@@ -306,7 +390,11 @@
       "whole"
     ],
     "focus_note": "TH, R linking, sentence rhythm",
-    "useful_expression": "talk someone through something"
+    "useful_expression": "talk someone through something",
+    "categories": [
+      "Health & Wellness"
+    ],
+    "primary_category": "Health & Wellness"
   },
   {
     "id": 23,
@@ -321,7 +409,11 @@
       "difficult to manage"
     ],
     "focus_note": "TH, stress, weak forms",
-    "useful_expression": "go down / difficult to manage"
+    "useful_expression": "go down / difficult to manage",
+    "categories": [
+      "Health & Wellness"
+    ],
+    "primary_category": "Health & Wellness"
   },
   {
     "id": 24,
@@ -335,7 +427,11 @@
       "did not want to hear"
     ],
     "focus_note": "reductions, emotional emphasis",
-    "useful_expression": "put off an appointment"
+    "useful_expression": "put off an appointment",
+    "categories": [
+      "Health & Wellness"
+    ],
+    "primary_category": "Health & Wellness"
   },
   {
     "id": 25,
@@ -349,7 +445,11 @@
       "too small"
     ],
     "focus_note": "clusters, reductions",
-    "useful_expression": "ask for a different size"
+    "useful_expression": "ask for a different size",
+    "categories": [
+      "Shopping & Services"
+    ],
+    "primary_category": "Shopping & Services"
   },
   {
     "id": 26,
@@ -363,7 +463,11 @@
       "return it"
     ],
     "focus_note": "linking, final consonants",
-    "useful_expression": "contact customer service / return an item"
+    "useful_expression": "contact customer service / return an item",
+    "categories": [
+      "Shopping & Services"
+    ],
+    "primary_category": "Shopping & Services"
   },
   {
     "id": 27,
@@ -377,7 +481,11 @@
       "expected"
     ],
     "focus_note": "linking, stress groups",
-    "useful_expression": "sort something out"
+    "useful_expression": "sort something out",
+    "categories": [
+      "Shopping & Services"
+    ],
+    "primary_category": "Shopping & Services"
   },
   {
     "id": 28,
@@ -391,7 +499,11 @@
       "willing to"
     ],
     "focus_note": "multi-syllable stress, reductions",
-    "useful_expression": "be willing to"
+    "useful_expression": "be willing to",
+    "categories": [
+      "Shopping & Services"
+    ],
+    "primary_category": "Shopping & Services"
   },
   {
     "id": 29,
@@ -405,7 +517,11 @@
       "decision"
     ],
     "focus_note": "reductions, word stress",
-    "useful_expression": "make a decision"
+    "useful_expression": "make a decision",
+    "categories": [
+      "Opinions & Decisions"
+    ],
+    "primary_category": "Opinions & Decisions"
   },
   {
     "id": 30,
@@ -420,7 +536,11 @@
       "recovery time"
     ],
     "focus_note": "TH, list intonation, stress",
-    "useful_expression": "think about / make a decision"
+    "useful_expression": "think about / make a decision",
+    "categories": [
+      "Opinions & Decisions"
+    ],
+    "primary_category": "Opinions & Decisions"
   },
   {
     "id": 31,
@@ -434,7 +554,11 @@
       "potential downsides"
     ],
     "focus_note": "contrastive stress, clusters",
-    "useful_expression": "outweigh the downsides"
+    "useful_expression": "outweigh the downsides",
+    "categories": [
+      "Opinions & Decisions"
+    ],
+    "primary_category": "Opinions & Decisions"
   },
   {
     "id": 32,
@@ -448,7 +572,11 @@
       "justify"
     ],
     "focus_note": "idiom rhythm, reductions",
-    "useful_expression": "be on the fence / look at the bigger picture"
+    "useful_expression": "be on the fence / look at the bigger picture",
+    "categories": [
+      "Opinions & Decisions"
+    ],
+    "primary_category": "Opinions & Decisions"
   },
   {
     "id": 33,
@@ -462,7 +590,11 @@
       "last night"
     ],
     "focus_note": "flap T, linking",
-    "useful_expression": "meet new people"
+    "useful_expression": "meet new people",
+    "categories": [
+      "Social Situations"
+    ],
+    "primary_category": "Social Situations"
   },
   {
     "id": 34,
@@ -476,7 +608,11 @@
       "next to me"
     ],
     "focus_note": "reductions, linking",
-    "useful_expression": "start a conversation"
+    "useful_expression": "start a conversation",
+    "categories": [
+      "Social Situations"
+    ],
+    "primary_category": "Social Situations"
   },
   {
     "id": 35,
@@ -490,7 +626,11 @@
       "small talk"
     ],
     "focus_note": "stress, reductions, connected speech",
-    "useful_expression": "get past something / small talk"
+    "useful_expression": "get past something / small talk",
+    "categories": [
+      "Social Situations"
+    ],
+    "primary_category": "Social Situations"
   },
   {
     "id": 36,
@@ -504,7 +644,11 @@
       "too hard"
     ],
     "focus_note": "modal reductions, natural pacing",
-    "useful_expression": "put someone at ease"
+    "useful_expression": "put someone at ease",
+    "categories": [
+      "Social Situations"
+    ],
+    "primary_category": "Social Situations"
   },
   {
     "id": 37,
@@ -517,7 +661,11 @@
       "called me"
     ],
     "focus_note": "final consonants, linking",
-    "useful_expression": "find something and call someone"
+    "useful_expression": "find something and call someone",
+    "categories": [
+      "Stories & Experiences"
+    ],
+    "primary_category": "Stories & Experiences"
   },
   {
     "id": 38,
@@ -531,7 +679,11 @@
       "turned into"
     ],
     "focus_note": "TH, linking, sentence stress",
-    "useful_expression": "turn into"
+    "useful_expression": "turn into",
+    "categories": [
+      "Stories & Experiences"
+    ],
+    "primary_category": "Stories & Experiences"
   },
   {
     "id": 39,
@@ -545,7 +697,11 @@
       "go as planned"
     ],
     "focus_note": "thought groups, contrastive stress",
-    "useful_expression": "go as planned"
+    "useful_expression": "go as planned",
+    "categories": [
+      "Stories & Experiences"
+    ],
+    "primary_category": "Stories & Experiences"
   },
   {
     "id": 40,
@@ -559,6 +715,10 @@
       "picture exactly"
     ],
     "focus_note": "reductions, conversational rhythm",
-    "useful_expression": "the funny thing is / go wrong"
+    "useful_expression": "the funny thing is / go wrong",
+    "categories": [
+      "Stories & Experiences"
+    ],
+    "primary_category": "Stories & Experiences"
   }
 ]
