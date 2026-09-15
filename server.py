@@ -10,6 +10,7 @@ except Exception:
     speechsdk = None
 
 ROOT=Path(__file__).resolve().parent
+APP_VERSION='1.3.10'
 CACHE=ROOT/'_cache'/'tts'; CACHE.mkdir(parents=True,exist_ok=True)
 SENTENCES=json.loads((ROOT/'sentences.json').read_text(encoding='utf-8'))
 AZURE_KEY=os.getenv('AZURE_SPEECH_KEY','').strip(); AZURE_REGION=os.getenv('AZURE_SPEECH_REGION','').strip()
@@ -94,13 +95,16 @@ def build_feedback(azure, baseline, ref):
     word_p50=pct(word_scores,.50,acc)
     phoneme_p20=pct(phoneme_scores,.20,word_p25)
     phoneme_p35=pct(phoneme_scores,.35,word_p50)
+    phoneme_p50=pct(phoneme_scores,.50,word_p50)
     break_errors=[w for w in words if w['error'] in ('UnexpectedBreak','MissingBreak','Monotone')]
     mispronounced=[w for w in words if w['error']=='Mispronunciation' or w['accuracy']<78]
 
     raw={
         # Keep articulation separate from fluency: a learner who reads slowly word-by-word
         # can still pronounce individual sounds accurately even if rhythm is weak.
-        'pronunciation': word_p50*.55 + phoneme_p35*.35 + acc*.10,
+        # Individual pronunciation should stay independent from reading speed, rhythm, and prosody.
+        # Use median word/phoneme articulation only, so slow but clearly pronounced speech can still score well here.
+        'pronunciation': word_p50*.55 + phoneme_p50*.45,
         'clarity': acc*.38 + word_p50*.30 + comp*.20 + phoneme_p35*.12,
         'stress': pros*.78 + acc*.12 + flu*.10,
         'rhythm': flu*.52 + pros*.48,
@@ -198,7 +202,7 @@ def build_feedback(azure, baseline, ref):
 
     details={
         'azure':{'accuracy':acc,'fluency':flu,'completeness':comp,'prosody':pros},
-        'wordP25':round(word_p25,1),'wordP50':round(word_p50,1),'phonemeP20':round(phoneme_p20,1),'phonemeP35':round(phoneme_p35,1),
+        'wordP25':round(word_p25,1),'wordP50':round(word_p50,1),'phonemeP20':round(phoneme_p20,1),'phonemeP35':round(phoneme_p35,1),'phonemeP50':round(phoneme_p50,1),
         'weakWords':weak_words,'breakErrors':break_errors,'baselineDelta':baseline_delta,
         'focusScores':[{'text':p,'score':round(s,1)} for s,p in focus_rank]
     }
@@ -305,10 +309,19 @@ def eleven_tts(text, voice):
     path.write_bytes(audio); return audio, False
 
 class H(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        # Beta builds change frequently. Prevent browsers/proxies from keeping stale HTML/JS/CSS.
+        self.send_header('Cache-Control','no-store, no-cache, must-revalidate, max-age=0')
+        self.send_header('Pragma','no-cache')
+        self.send_header('Expires','0')
+        self.send_header('X-Shadowing-Version',APP_VERSION)
+        super().end_headers()
     def translate_path(self,path):
         raw=super().translate_path(path); rel=os.path.relpath(raw,os.getcwd()); return str(ROOT/rel)
     def do_GET(self):
         u=urlparse(self.path)
+        if u.path=='/api/version':
+            return self.j(200,{'version':APP_VERSION})
         if u.path=='/api/config':
             return self.j(200,{'azureReady':bool(AZURE_KEY and AZURE_REGION),'azureSdkReady':speechsdk is not None,'elevenLabsReady':bool(ELEVEN_KEY and (VOICE_IDS['female'] or VOICE_IDS['male'])),'voices':{'female':bool(VOICE_IDS['female']),'male':bool(VOICE_IDS['male'])},'ttsModel':ELEVEN_MODEL})
         if u.path=='/api/sentence':
@@ -369,7 +382,7 @@ class H(SimpleHTTPRequestHandler):
 
 if __name__=='__main__':
     os.chdir(ROOT); port=int(os.getenv('PORT','8000')); host=os.getenv('HOST','0.0.0.0')
-    print(f'Shadowing Lab v1.3.8 → http://localhost:{port}', flush=True)
+    print(f'Shadowing Lab v{APP_VERSION} → http://localhost:{port}', flush=True)
     print('Azure:', 'READY' if AZURE_KEY and AZURE_REGION else 'PREVIEW MODE', '/ SDK:', 'READY' if speechsdk else 'MISSING', flush=True)
     print('ElevenLabs:', 'READY' if ELEVEN_KEY and (VOICE_IDS['female'] or VOICE_IDS['male']) else 'BROWSER FALLBACK', flush=True)
     ThreadingHTTPServer((host,port),H).serve_forever()

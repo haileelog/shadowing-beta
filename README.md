@@ -1,53 +1,36 @@
-# Shadowing Lab v1.3.9
+# Shadowing Lab
 
-Core beta build with Azure Pronunciation Assessment via the official Azure Speech SDK.
+혼자 영어 섀도잉을 반복하다가, 매번 녹음하고 비교하고 피드백을 정리하는 과정이 번거로워서 만든 영어 학습 프로젝트입니다.
 
-## Render settings
+한 문장을 듣고 따라 읽은 뒤, 자신의 발음을 여러 번 다시 녹음하면서 변화 과정을 확인할 수 있도록 만드는 것이 목표입니다.
 
-Build Command:
+## Features
 
-```bash
-pip install -r requirements.txt
-```
+- 영어 섀도잉 예문 연습
+- 브라우저 마이크 녹음
+- 발음 평가 및 항목별 점수
+- 재녹음 3회 및 첫 시도 대비 변화 확인
+- Strengths / Needs Work / Feedback
+- 이전 시도 기록 및 녹음 다운로드
+- 모바일/데스크톱 반응형 UI
 
-Start Command:
+## Tech Stack
 
-```bash
-python3 server.py
-```
+- HTML
+- CSS
+- JavaScript
+- Python
 
-Environment variables:
+외부 음성·평가 서비스와 내부 평가 로직의 세부 구현은 공개 README에 기재하지 않습니다.
 
-- `AZURE_SPEECH_KEY`
-- `AZURE_SPEECH_REGION`
-- `ELEVENLABS_API_KEY` (optional)
-- `ELEVENLABS_FEMALE_VOICE_ID` (optional)
-- `ELEVENLABS_MALE_VOICE_ID` (optional)
+## Project History
 
-## Assessment diagnostics
+- 2026.09.15 — First prototype
+- 2026.09.15 — v1.3.x: 녹음, 재녹음, 발음 피드백, 모바일 UI 베타 기능 개선
+- 2026.09.15 — v1.3.10: 배포 캐시 방지, 버전 확인 방식 정리, 개별 발음 정확도 계산 분리 개선
 
-Render logs use these tags:
+## Status
 
-- `[AZURE-ASSESS]`: transcript and Azure score diagnostics
-- `[ASSESS-SUCCESS]`: valid assessment completed
-- `[NO-COMMIT]`: failed/rejected recording; must not be persisted
-- `[COMMIT-DEFERRED]`: successful attempt kept in browser only until Supabase is connected
-- `[CLIENT-LOG]`: client-side preflight failure such as silence/too-short audio
+Public beta / actively developing
 
-The beta currently has no persistent database. Successful attempt persistence will be connected to Supabase later.
-
-
-## Category mapping
-- UI에는 학습자의 레벨 pill만 노출합니다.
-- 문장 데이터는 `categories` 배열과 `primary_category`를 유지해 문장-카테고리 다대다 매핑으로 확장할 수 있습니다.
-- 향후 Supabase에서는 `sentences`, `categories`, `sentence_categories` 조인 테이블 구조를 권장합니다.
-- 사용자 관심사 변경과 무관하게 과거 세션에는 사용 당시 sentence_id를 저장해 카테고리 분석/도전율/재녹음률 통계를 낼 수 있게 합니다.
-
-
-## v1.3.9
-- Lock recording controls after a successful assessment until the next retry button is pressed.
-- Keep failed attempts uncommitted and show a clear in-session “미채점” notice.
-- Compare retry feedback against the first successful attempt, not the immediately previous attempt.
-- Use stricter score calibration with word/phoneme lower-percentile penalties and break/prosody errors.
-- Generate richer multi-item Strengths / Needs Work / Feedback from Azure word and phoneme diagnostics.
-- Update reset confirmation copy and retry button emoji labels.
+현재는 기능과 사용자 경험을 빠르게 검증하는 베타 단계입니다.
