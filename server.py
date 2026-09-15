@@ -193,11 +193,11 @@ def build_feedback(azure, baseline, ref):
         baseline_delta=delta
         improved=sorted(delta.items(),key=lambda kv:kv[1],reverse=True)
         if improved and improved[0][1]>0:
-            label={'clarity':'명료도','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[improved[0][0]]
+            label={'clarity':'전달력','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[improved[0][0]]
             strengths.insert(0,f'첫 시도보다 {subject_form(label)} {improved[0][1]:+.1f}점 좋아졌어요.')
         worsened=sorted(delta.items(),key=lambda kv:kv[1])
         if worsened and worsened[0][1]<0:
-            label={'clarity':'명료도','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[worsened[0][0]]
+            label={'clarity':'전달력','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[worsened[0][0]]
             needs.insert(0,f'첫 시도와 비교하면 {subject_form(label)} {abs(worsened[0][1]):.1f}점 낮아졌어요. 이번에는 이 부분을 조금 더 천천히 다듬어 보세요.')
 
     details={
