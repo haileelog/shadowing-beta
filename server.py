@@ -10,7 +10,7 @@ except Exception:
     speechsdk = None
 
 ROOT=Path(__file__).resolve().parent
-APP_VERSION='1.4.2'
+APP_VERSION='1.4.3'
 CACHE=ROOT/'_cache'/'tts'; CACHE.mkdir(parents=True,exist_ok=True)
 SENTENCES=json.loads((ROOT/'sentences.json').read_text(encoding='utf-8'))
 AZURE_KEY=os.getenv('AZURE_SPEECH_KEY','').strip(); AZURE_REGION=os.getenv('AZURE_SPEECH_REGION','').strip()
