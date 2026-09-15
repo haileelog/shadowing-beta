@@ -12,7 +12,61 @@
 @media(max-width:640px){.sentence{font-size:21px}.metric{grid-template-columns:1fr 45px;gap:8px}.track{grid-column:1/-1}.score{grid-column:2;grid-row:1}.voice-toggle{width:100%}.voice-toggle button{flex:1}.history button{width:100%;text-align:left}.overall .big{font-size:50px}button{width:auto}.row>button{flex:1 1 auto}.wrap{padding:20px 14px 56px}}
 
 .lesson-head{display:flex;align-items:center;justify-content:flex-start;margin-bottom:14px}.lesson-head .pill{font-size:13px;padding:7px 12px}.mic-row{display:block;margin-bottom:12px}.mic-row button{width:100%;max-width:360px}.record-actions{display:flex;gap:10px;flex-wrap:wrap}.record-actions button{flex:1 1 140px}.reset-btn-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;gap:4px}.reset-count{font-size:11px;font-weight:700;color:#9aa4b2}.reset-count[hidden]{display:none}.history-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}.history-grid button{min-height:66px;white-space:pre-line;border-radius:16px;background:#f7fbff;border:1px solid #dce9f5;color:#506174;padding:10px;font-size:13px;line-height:1.35}.history-grid button.active{border:2px solid #5b91de;background:#f7fbff;color:#2c66c7}.history-grid button:disabled{opacity:.48}.result-shell{display:grid;gap:14px}.feedback-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;align-items:start}.feedback-summary .fb-toggle{min-height:88px;border-radius:16px;grid-row:1}.feedback-summary .fb-toggle[data-panel="goodPanel"]{grid-column:1}.feedback-summary .fb-toggle[data-panel="weakPanel"]{grid-column:2}.feedback-summary .fb-toggle[data-panel="tipPanel"]{grid-column:3}.feedback-summary .fb-toggle.active{background:#eaf3ff;border-color:#8eb7f1;box-shadow:0 0 0 2px rgba(75,142,247,.08);color:#1e5eb8}.feedback-summary .fb-panel{grid-column:1/-1;grid-row:2;margin-top:0}.feedback-summary #goodPanel,.feedback-summary #weakPanel,.feedback-summary #tipPanel{grid-column:1/-1}.attempt-audio-wrap{margin-top:14px}.attempt-audio-wrap[hidden]{display:none}.compact-note{font-size:13px;color:var(--muted);line-height:1.6}.result-title{font-size:18px;font-weight:900;margin-bottom:4px}.assessment-warning{margin:12px 0 14px;padding:12px 14px;border-radius:14px;background:#fff1f0;border:1px solid #ffd5d1;color:#c43a32;font-size:13px;font-weight:800;line-height:1.6}.assessment-warning[hidden]{display:none}.record-card.ready-locked .record-actions button:not(#resetBtn){pointer-events:none}.level-top{margin-bottom:14px}.lesson-card .sentence{margin-top:2px;margin-bottom:8px}.sentence-translation{font-size:15px;color:#8a94a3;line-height:1.6;margin-bottom:16px}.lesson-divider{height:1px;background:#e6edf4;margin:0 0 16px}.lesson-card .hint{margin:0}.listen-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 14px;padding:0 2px}.listen-controls .listen-speed{width:132px;justify-content:center}.listen-controls .voice-toggle{flex:0 0 auto}.listen-controls .danger{width:132px}.lesson-card{margin-bottom:8px}#ttsStatus{display:none!important}
-@media(max-width:640px){.listen-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.listen-controls .voice-toggle{grid-column:1/-1;width:100%}.listen-controls .voice-toggle button{flex:1}.listen-controls .listen-speed,.listen-controls .danger{width:100%}.feedback-summary{grid-template-columns:repeat(3,1fr);gap:8px}.feedback-summary .fb-toggle{min-height:82px;padding:10px;font-size:13px}.feedback-summary .fb-toggle strong{font-size:13px}.feedback-summary .fb-toggle small{font-size:11px}.feedback-summary .fb-panel{grid-column:1/-1}.history-grid{grid-template-columns:repeat(2,1fr)}.mic-row button{max-width:none}.record-actions button{flex:1 1 calc(50% - 8px)}}
+@media(max-width:640px){
+  .listen-controls{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+  .listen-controls .voice-toggle{grid-column:1/-1;width:100%}
+  .listen-controls .voice-toggle button{flex:1;min-width:0}
+  .listen-controls .listen-speed{grid-column:span 2;width:100%;min-width:0;padding-left:8px;padding-right:8px}
+  .listen-controls .danger{grid-column:span 2;width:100%;min-width:0;padding-left:8px;padding-right:8px}
+  .feedback-summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .feedback-summary .fb-toggle{min-width:0;min-height:88px;padding:10px 8px;font-size:12px;align-items:flex-start;gap:4px}
+  .feedback-summary .fb-toggle>span:first-child{min-width:0;gap:5px}
+  .feedback-summary .fb-toggle strong{font-size:12px;line-height:1.22;overflow-wrap:anywhere;word-break:keep-all}
+  .feedback-summary .fb-toggle small{font-size:10px}
+  .feedback-summary .fb-toggle .chevron{font-size:16px;flex:0 0 auto;margin-top:2px}
+  .feedback-summary .fb-toggle[data-panel="goodPanel"]{background:#f0faf4;border-color:#ccebd8}
+  .feedback-summary .fb-toggle[data-panel="weakPanel"]{background:#fff8e9;border-color:#f4dfaa}
+  .feedback-summary .fb-toggle[data-panel="tipPanel"]{background:#eef5ff;border-color:#cfe0f8}
+  .feedback-summary .fb-toggle[data-panel="goodPanel"].active{background:#e7f7ed;border-color:#85c99f;color:#176b3f}
+  .feedback-summary .fb-toggle[data-panel="weakPanel"].active{background:#fff3d3;border-color:#e8bf58;color:#8a5b00}
+  .feedback-summary .fb-toggle[data-panel="tipPanel"].active{background:#e6f0ff;border-color:#79a9ea;color:#1e5eb8}
+  .feedback-summary .fb-panel{grid-column:1/-1}
+  .history-grid{gap:7px}
+  .history-grid button{min-width:0;min-height:62px;padding:8px 5px;font-size:11px;line-height:1.25;overflow-wrap:anywhere;word-break:keep-all}
+  .history-grid button .subcta{font-size:9px;line-height:1.2;margin-top:3px}
+  .mic-row button{max-width:none}
+  .record-actions button{flex:1 1 calc(50% - 8px)}
+}
+
+/* v1.4.2 final mobile UI polish */
+.mic-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.mic-row #permissionBtn{flex:1 1 auto;max-width:360px}.mic-row .reset-compact{flex:0 0 auto;width:auto;min-width:92px;padding:9px 12px;font-size:13px;border-radius:13px}.record-actions{justify-content:center}.record-actions #recordBtn,.record-actions #stopBtn{flex:0 1 220px;max-width:220px}.row:has(#evaluateBtn){justify-content:center}.row:has(#evaluateBtn) #evaluateBtn{width:min(100%,460px);flex:0 1 460px}
+.feedback-summary .fb-toggle[data-panel="goodPanel"]{background:#f0faf4;border-color:#ccebd8}.feedback-summary .fb-toggle[data-panel="weakPanel"]{background:#fff5f4;border-color:#f1d1cf}.feedback-summary .fb-toggle[data-panel="tipPanel"]{background:#eef6ff;border-color:#cfe0f8}.feedback-summary .fb-toggle[data-panel="goodPanel"].active{background:#e5f7eb;border-color:#82c99d;color:#176b3f;box-shadow:0 0 0 2px rgba(24,128,75,.06)}.feedback-summary .fb-toggle[data-panel="weakPanel"].active{background:#ffeceb;border-color:#e8a6a1;color:#a53d37;box-shadow:0 0 0 2px rgba(194,65,58,.06)}.feedback-summary .fb-toggle[data-panel="tipPanel"].active{background:#e6f0ff;border-color:#79a9ea;color:#1e5eb8;box-shadow:0 0 0 2px rgba(75,142,247,.08)}
+@media(max-width:640px){
+  .listen-controls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;align-items:stretch;padding:0;margin:10px 0 14px}
+  .listen-controls .voice-toggle{display:contents}
+  .listen-controls .voice-toggle button,.listen-controls .listen-speed,.listen-controls .danger{grid-column:auto;width:100%;min-width:0;height:52px;padding:8px 4px;border-radius:14px;font-size:13px;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+  .listen-controls .voice-toggle button{background:#eef3f8;color:#5e646d;border:0}
+  .listen-controls .voice-toggle button.active{background:#fff;color:#111;box-shadow:0 2px 8px rgba(75,98,125,.12)}
+  .mic-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;margin-bottom:12px}
+  .mic-row #permissionBtn{width:100%;max-width:none;min-width:0}
+  .mic-row .reset-compact{width:auto;min-width:82px;padding:8px 10px;font-size:12px}
+  .reset-compact .reset-count{font-size:10px}
+  .record-actions{display:grid;grid-template-columns:repeat(2,minmax(0,150px));justify-content:center;gap:10px;flex-wrap:nowrap}
+  .record-actions #recordBtn,.record-actions #stopBtn{width:100%;max-width:none;min-width:0;flex:none}
+  .row:has(#evaluateBtn){display:flex;justify-content:center}
+  .row:has(#evaluateBtn) #evaluateBtn{width:100%;max-width:none;flex:1 1 auto}
+  .feedback-summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .feedback-summary .fb-toggle{min-width:0;min-height:82px;padding:10px 7px;font-size:11px;align-items:flex-start;gap:3px}
+  .feedback-summary .fb-toggle>span:first-child{min-width:0;gap:5px;max-width:calc(100% - 14px)}
+  .feedback-summary .fb-toggle strong{font-size:11px;line-height:1.2;overflow-wrap:normal;word-break:keep-all}
+  .feedback-summary .fb-toggle small{font-size:10px}
+  .feedback-summary .fb-toggle .chevron{font-size:14px;flex:0 0 auto;margin-top:2px}
+  .attempts-card{padding:18px 18px}.attempts-head{margin-bottom:10px}
+  .history-grid{gap:6px}
+  .history-grid button{min-width:0;min-height:60px;padding:8px 4px;font-size:10.5px;line-height:1.2;overflow-wrap:normal;word-break:keep-all}
+  .history-grid button .subcta{font-size:9px;line-height:1.15;margin-top:3px}
+}
+
 @media(prefers-reduced-motion:reduce){.fill{transition:none}.spinner,.wave i{animation:none}}
 </style>
 </head>
@@ -37,17 +91,12 @@
 </div>
 
 <section class="card record-card" id="recordCard">
-<div class="mic-row"><button class="secondary" id="permissionBtn">🎙 마이크 확인</button></div>
-<div class="record-actions"><button class="primary" id="recordBtn">🎙️ 녹음</button><button class="danger" id="stopBtn" disabled>🟥 종료</button><button class="secondary" id="resetBtn"><span class="reset-btn-inner"><span>🔄 초기화</span><span class="reset-count" id="resetCountLabel" hidden>1/3</span></span></button></div>
+<div class="mic-row"><button class="secondary" id="permissionBtn">🎙 마이크 확인</button><button class="secondary reset-compact" id="resetBtn"><span class="reset-btn-inner"><span>🔄 초기화</span><span class="reset-count" id="resetCountLabel" hidden>1/3</span></span></button></div>
+<div class="record-actions"><button class="primary" id="recordBtn">🎙️ 녹음</button><button class="danger" id="stopBtn" disabled>🟥 종료</button></div>
 <div class="status" id="status">마이크 권한을 확인한 뒤 예문을 따라 읽어 보세요.</div><div class="recording-indicator" id="recordingIndicator" hidden><span class="wave"><i></i><i></i><i></i><i></i><i></i></span><span>녹음 중입니다</span></div><div class="quality" id="quality" hidden></div>
 <div class="permission" id="permissionHelp" hidden><strong>마이크가 허용되지 않았어요.</strong><br>Chrome/Whale은 주소창 사이트 권한에서 마이크를 허용해 주세요. 모바일에서는 브라우저 앱 자체의 마이크 권한도 필요합니다. HTTPS 또는 localhost에서만 녹음이 정상 동작합니다.</div>
 <audio id="playback" controls hidden></audio>
 <div class="row" style="margin-top:14px"><button class="primary" id="evaluateBtn" disabled>평가하기</button></div>
-</section>
-
-<section class="card attempts-card" id="attemptsCard" hidden>
-  <div class="attempts-head"><strong>이전 시도 기록</strong><button class="attempt-help" id="attemptHelpBtn" type="button">?</button></div>
-  <div class="history-grid" id="history"></div>
 </section>
 
 <section class="card" id="resultCard" hidden style="position:relative">
@@ -67,13 +116,18 @@
 </div>
 <div class="attempt-audio-wrap" id="attemptAudioWrap" hidden><div class="attempt-audio-label">내 녹음</div><audio id="attemptAudio" controls></audio><div class="attempt-download" id="attemptDownloadWrap"><button class="ghost" id="attemptDownloadBtn" type="button">⬇️ 내 녹음 저장</button></div></div>
 </section>
+
+<section class="card attempts-card" id="attemptsCard" hidden>
+  <div class="attempts-head"><strong>이전 시도 기록</strong><button class="attempt-help" id="attemptHelpBtn" type="button">?</button></div>
+  <div class="history-grid" id="history"></div>
+</section>
 <div class="page-bottom-space"></div>
 </div>
 
 <div class="modal-bg" id="modalBg" hidden><div class="modal" role="dialog" aria-modal="true"><h2 id="modalTitle">알림</h2><div class="modal-body" id="modalBody"></div><div class="modal-actions"><button class="modal-cancel" id="modalCancel">취소</button><button class="modal-ok" id="modalOk">확인</button></div></div></div>
 <script>
 (()=>{
-console.info('Shadowing Lab v1.4.1');
+console.info('Shadowing Lab v1.4.2');
 const $=id=>document.getElementById(id); let currentSentence={id:21,topic:'Health & Wellness',level:'intermediate',text:$('sentence').textContent.trim(),focus:['thought','treatment','therapist','talked me through','whole'],focus_note:'TH, R linking, sentence rhythm',useful_expression:'talk someone through something',translation:$('sentenceTranslation').textContent.trim()};
 let seen=[currentSentence.id], voice='female', mediaRecorder=null,chunks=[],currentBlob=null,currentUrl=null,attempt=1,records=[],selected=-1,resetCount=0,ttsObjectUrl=null,elevenReady=false,currentEvaluated=false,browserVoices={female:null,male:null},micReady=false;
 const attemptNames=['오늘의 섀도잉','1차 재녹음','2차 재녹음','3차 재녹음'],tabNames=['오늘의 섀도잉','재녹음 1️⃣','재녹음 2️⃣','재녹음 3️⃣'];
@@ -193,13 +247,15 @@ function renderHistory(){
     if(target===1)b.innerHTML=`<span style="color:#9aa8b8;font-weight:800">오늘의 섀도잉</span>\n${rec.overall.toFixed(1)}점`;
     else b.textContent=`${tabNames[target-1]}\n${rec.overall.toFixed(1)}점`;
     if(idx===selected)b.classList.add('active');
-    b.onclick=()=>show(idx);h.appendChild(b);
+    b.onclick=()=>{show(idx);$('resultCard').scrollIntoView({behavior:'smooth',block:'start'})};h.appendChild(b);
   }
   if(records.length<4){
     const b=document.createElement('button');b.className='next-cta';
     b.innerHTML=`${tabNames[nextTarget-1]}<span class="subcta">다시 도전하기</span>`;
     b.onclick=()=>activateAttempt(nextTarget);h.appendChild(b);
   }
+  const visibleButtons=h.children.length;
+  h.style.gridTemplateColumns=`repeat(${Math.max(1,Math.min(4,visibleButtons))},minmax(0,1fr))`;
 }
 function show(i){
   const r=records[i];if(!r)return;selected=i;$('attemptNotice').hidden=true;$('overall').textContent=r.overall.toFixed(1);$('resultTitle').textContent=(r.attempt===1?'오늘의 섀도잉':`재녹음 ${retryEmoji[r.attempt-1]}`)+' · 피드백';const warnEl=$('assessmentWarning');if(r.warning){warnEl.textContent='⚠️ '+r.warning;warnEl.hidden=false}else{warnEl.textContent='';warnEl.hidden=true}
