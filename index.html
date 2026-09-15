@@ -7,6 +7,8 @@
 <style>
 :root{--bg:#f2f7fb;--card:#fcfeff;--text:#1f2937;--muted:#6b7280;--line:#dbe6ef;--accent:#5b91de;--danger:#c2413a;--good:#18804b;--teal:#2f6fe4}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif}.wrap{max-width:930px;margin:auto;padding:28px 18px 72px}.top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap}h1{margin:0;font-size:31px;letter-spacing:-.02em}.sub{color:var(--muted);margin-top:7px;font-size:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin:14px 0;box-shadow:0 10px 30px rgba(105,128,161,.06)}.eyebrow{text-transform:none;letter-spacing:.04em;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:12px}.sentence{font-size:25px;line-height:1.58;font-weight:760}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0 10px}.pill{font-size:12px;border-radius:999px;padding:7px 10px;background:#eff4fa;color:#5c6673;border:1px solid #e0e7ef}.pill.level-pill{font-weight:900}.level-beginner{background:#eaf8ee;color:#1d7b44;border-color:#cdebd6}.level-intermediate{background:#e9f1ff;color:#285bc8;border-color:#cadcff}.level-advanced{background:#fff2df;color:#aa5a00;border-color:#ffe0b5}.level-native{background:#f0ebff;color:#6a45c5;border-color:#ddd2ff}.hint{font-size:14px;color:var(--muted);line-height:1.72}.focus-token{color:#42556f;font-weight:800;text-decoration:underline;text-decoration-color:#d7deea;text-underline-offset:3px;cursor:pointer}.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.controls{margin-top:17px}button{border:0;border-radius:14px;padding:12px 16px;font-size:15px;font-weight:800;cursor:pointer;transition:all .18s ease}button:disabled{opacity:.42;cursor:not-allowed}.primary{background:var(--accent);color:#fff}.secondary{background:#eef3f8;color:#334155}.ghost{background:#fff;border:1px solid var(--line)}.danger{background:#fff1f0;color:var(--danger);border:1px solid #ffd5d1}.voice-toggle{display:inline-flex;background:#eef3f8;border-radius:14px;padding:3px;gap:3px}.voice-toggle button{padding:9px 12px;background:transparent;color:#5e646d}.voice-toggle button.active{background:#fff;color:#111;box-shadow:0 1px 4px rgba(0,0,0,.08)}.status{font-size:14px;color:var(--muted);line-height:1.6;margin-top:12px;min-height:21px}.permission,.quality{margin-top:12px;padding:12px 14px;border-radius:14px;font-size:13px;line-height:1.65}.permission{background:#f7f9fb;border:1px solid var(--line)}.quality{background:#f5f8fc}.quality.warn{background:#fff6e8;color:#865200}.quality.bad{background:#fff0ef;color:#a7271f}.small{font-size:12px;color:var(--muted);margin-top:8px}audio{width:100%;margin-top:14px}.overall{display:flex;gap:12px;align-items:flex-end;margin:10px 0 18px;flex-wrap:wrap}.overall .big{font-size:58px;font-weight:900;line-height:1}.overall .of{color:var(--muted);padding-bottom:8px}.delta{font-size:13px;color:var(--good);font-weight:800;padding-bottom:8px}.metrics{border:1px solid var(--line);border-radius:20px;padding:11px 19px;background:#fff}.metric{display:grid;grid-template-columns:minmax(125px,190px) 1fr 48px;align-items:center;gap:14px;padding:12px 0}.metric+.metric{border-top:1px solid #edf2f7}.metric .name{font-weight:800}.track{height:16px;background:#eef3f8;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;border-radius:999px;transition:width .6s ease}.score{text-align:right;font-weight:900;font-size:19px}.feedback{display:grid;gap:10px;margin-top:16px}.fb{padding:15px 16px;background:#f7fafc;border-radius:16px;line-height:1.5}.fb-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;color:var(--text);border:1px solid #edf2f7}.fb-toggle>span:first-child{display:flex;flex-direction:column;gap:4px}.fb-toggle strong{display:block;margin:0}.fb-toggle small{font-size:12px;font-weight:700;color:var(--muted)}.fb-toggle .chevron{font-size:20px;color:#8190a3;transition:transform .18s ease}.fb-toggle.open .chevron{transform:rotate(180deg)}.fb-panel{margin-top:-4px;padding:15px 16px;background:#fff;border:1px solid #e7eef6;border-radius:0 0 16px 16px;line-height:1.72}.fb-panel[hidden]{display:none}.feedback-audio{color:#1565c0;font-weight:850;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.history-label{font-size:13px;color:var(--muted);font-weight:750;margin-top:19px;margin-bottom:8px}.history{display:flex;gap:8px;flex-wrap:wrap}.history button{background:#f2f6fb;border:1px solid transparent;border-radius:999px;padding:10px 14px;font-size:13px}.history button.active{background:#e8f1ff;color:#0b57d0;border-color:#c7ddff}.analysis{position:absolute;inset:0;background:rgba(251,253,255,.96);border-radius:24px;display:flex;align-items:center;justify-content:center;z-index:20}.analysis-box{text-align:center;max-width:430px;padding:30px}.spinner{width:40px;height:40px;border:4px solid #e6ebf2;border-top-color:var(--accent);border-radius:50%;margin:0 auto 14px;animation:spin .9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.modal-bg{position:fixed;inset:0;background:rgba(18,26,40,.42);display:flex;align-items:center;justify-content:center;z-index:100;padding:18px}.modal-bg[hidden]{display:none}.modal{width:min(540px,94vw);background:#fff;border-radius:28px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.24)}.modal h2{margin:0 0 13px;font-size:23px}.modal-body{font-size:16px;line-height:1.7}.modal-sub{display:block;color:#93979e;font-size:12px;margin-top:9px}.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}.modal-actions button{border-radius:999px;padding:13px 23px}.modal-cancel{background:#dff5fb;color:#0e6e78}.modal-ok{background:var(--teal);color:#fff}.recording-indicator{display:flex;align-items:center;gap:10px;margin-top:12px;color:#d93025;font-weight:850}.recording-indicator[hidden]{display:none}.wave{display:flex;align-items:center;gap:3px;height:24px}.wave i{display:block;width:4px;height:8px;border-radius:999px;background:#ef5350;animation:wave 1s ease-in-out infinite}.wave i:nth-child(2){animation-delay:.12s}.wave i:nth-child(3){animation-delay:.24s}.wave i:nth-child(4){animation-delay:.36s}.wave i:nth-child(5){animation-delay:.48s}@keyframes wave{0%,100%{height:7px;opacity:.55}50%{height:23px;opacity:1}}#recordBtn.recording-active{box-shadow:0 0 0 4px rgba(75,142,247,.16),0 8px 22px rgba(75,142,247,.24);transform:translateY(-1px)}#stopBtn.stop-active{box-shadow:0 0 0 4px rgba(191,65,58,.12);border-color:#ffaaa4;background:#ffe9e7}.attempt-download{margin-top:12px}.attempt-download[hidden]{display:none}.page-bottom-space{height:4px}
+.attempts-card{padding:20px 24px}.attempts-head{display:flex;align-items:center;gap:8px;margin-bottom:12px}.attempts-head strong{font-size:15px}.attempt-help{width:24px;height:24px;border-radius:50%;padding:0;background:#eef4fb;color:#5d6b7c;font-size:13px}.history-grid button.next-cta{background:#fff2f1;border:1px solid #f4b8b4;color:#b64038}.history-grid button.next-cta:hover{background:#ffe9e7}.history-grid button .subcta{display:block;margin-top:4px;font-size:11px;font-weight:800;color:#c45a52}.history-grid button.completed{background:#f8fbff;color:#5d6f84}.history-grid button.completed.active{background:#edf5ff;border:2px solid #6a9ce3;color:#2866c0}.attempt-audio-label{font-size:13px;font-weight:800;color:var(--muted);margin-top:14px}.attempt-download button{border-color:#cfe0ef;color:#315a7d;background:#f8fbff}.result-title{font-size:18px;font-weight:900;margin-bottom:12px;color:#344154}.analysis-box .progress-line{margin-top:8px;color:#5f6f82;font-size:13px;line-height:1.6}
+
 @media(max-width:640px){.sentence{font-size:21px}.metric{grid-template-columns:1fr 45px;gap:8px}.track{grid-column:1/-1}.score{grid-column:2;grid-row:1}.voice-toggle{width:100%}.voice-toggle button{flex:1}.history button{width:100%;text-align:left}.overall .big{font-size:50px}button{width:auto}.row>button{flex:1 1 auto}.wrap{padding:20px 14px 56px}}
 
 .lesson-head{display:flex;align-items:center;justify-content:flex-start;margin-bottom:14px}.lesson-head .pill{font-size:13px;padding:7px 12px}.mic-row{display:block;margin-bottom:12px}.mic-row button{width:100%;max-width:360px}.record-actions{display:flex;gap:10px;flex-wrap:wrap}.record-actions button{flex:1 1 140px}.history-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}.history-grid button{min-height:66px;white-space:pre-line;border-radius:16px;background:#f7fbff;border:1px solid #dce9f5;color:#506174;padding:10px;font-size:13px;line-height:1.35}.history-grid button.active{border:2px solid #5b91de;background:#f7fbff;color:#2c66c7}.history-grid button:disabled{opacity:.48}.result-shell{display:grid;gap:14px}.feedback-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;align-items:start}.feedback-summary .fb-toggle{min-height:88px;border-radius:16px;grid-row:1}.feedback-summary .fb-toggle[data-panel="goodPanel"]{grid-column:1}.feedback-summary .fb-toggle[data-panel="weakPanel"]{grid-column:2}.feedback-summary .fb-toggle[data-panel="tipPanel"]{grid-column:3}.feedback-summary .fb-toggle.active{background:#eaf3ff;border-color:#8eb7f1;box-shadow:0 0 0 2px rgba(75,142,247,.08);color:#1e5eb8}.feedback-summary .fb-panel{grid-column:1/-1;grid-row:2;margin-top:0}.feedback-summary #goodPanel,.feedback-summary #weakPanel,.feedback-summary #tipPanel{grid-column:1/-1}.attempt-audio-wrap{margin-top:14px}.attempt-audio-wrap[hidden]{display:none}.compact-note{font-size:13px;color:var(--muted);line-height:1.6}.result-title{font-size:18px;font-weight:900;margin-bottom:4px}.record-card.ready-locked .record-actions button:not(#resetBtn){pointer-events:none}.level-top{margin-bottom:14px}.lesson-card .sentence{margin-top:2px;margin-bottom:12px}
@@ -40,8 +42,13 @@
 <div class="row" style="margin-top:14px"><button class="primary" id="evaluateBtn" disabled>평가하기</button></div>
 </section>
 
+<section class="card attempts-card" id="attemptsCard" hidden>
+  <div class="attempts-head"><strong>이전 시도 기록</strong><button class="attempt-help" id="attemptHelpBtn" type="button">?</button></div>
+  <div class="history-grid" id="history"></div>
+</section>
+
 <section class="card" id="resultCard" hidden style="position:relative">
-<div class="eyebrow">발음 피드백</div><div class="quality bad" id="attemptNotice" hidden></div><div class="overall"><div class="big" id="overall">—</div><div class="of">/ 10</div><div class="delta" id="delta"></div></div>
+<div class="result-title" id="resultTitle">오늘의 섀도잉 · 피드백</div><div class="quality bad" id="attemptNotice" hidden></div><div class="overall"><div class="big" id="overall">—</div><div class="of">/ 10</div><div class="delta" id="delta"></div></div>
 <div class="metrics">
 <div class="metric" data-key="clarity"><div class="name">명료도</div><div class="track"><div class="fill"></div></div><div class="score">—</div></div>
 <div class="metric" data-key="pronunciation"><div class="name">개별 발음 정확도</div><div class="track"><div class="fill"></div></div><div class="score">—</div></div>
@@ -54,7 +61,7 @@
 <button class="fb fb-toggle" type="button" data-panel="weakPanel"><span><strong id="weakLabel">⚠️ Needs Work</strong><small id="weakCount">1개</small></span><span class="chevron">⌄</span></button><div class="fb-panel" id="weakPanel" hidden><span id="weakText"></span></div>
 <button class="fb fb-toggle" type="button" data-panel="tipPanel"><span><strong id="tipLabel">✏️ Feedback</strong><small id="tipCount">1개</small></span><span class="chevron">⌄</span></button><div class="fb-panel" id="tipPanel" hidden><span id="tipText"></span></div>
 </div>
-<div class="attempt-audio-wrap" id="attemptAudioWrap" hidden><audio id="attemptAudio" controls></audio><div class="attempt-download" id="attemptDownloadWrap"><button class="ghost" id="attemptDownloadBtn" type="button">오늘의 섀도잉 다운로드</button></div></div><div class="history-label">이전 시도 기록</div><div class="history-grid" id="history"></div>
+<div class="attempt-audio-wrap" id="attemptAudioWrap" hidden><div class="attempt-audio-label">내 녹음</div><audio id="attemptAudio" controls></audio><div class="attempt-download" id="attemptDownloadWrap"><button class="ghost" id="attemptDownloadBtn" type="button">⬇️ 내 녹음 저장</button></div></div>
 </section>
 <div class="page-bottom-space"></div>
 </div>
@@ -62,7 +69,7 @@
 <div class="modal-bg" id="modalBg" hidden><div class="modal" role="dialog" aria-modal="true"><h2 id="modalTitle">알림</h2><div class="modal-body" id="modalBody"></div><div class="modal-actions"><button class="modal-cancel" id="modalCancel">취소</button><button class="modal-ok" id="modalOk">확인</button></div></div></div>
 <script>
 (()=>{
-console.info('Shadowing Lab v1.3.10');
+console.info('Shadowing Lab v1.3.11');
 const $=id=>document.getElementById(id); let currentSentence={id:21,topic:'Health & Wellness',level:'intermediate',text:$('sentence').textContent.trim(),focus:['thought','treatment','therapist','talked me through','whole'],focus_note:'TH, R linking, sentence rhythm',useful_expression:'talk someone through something'};
 let seen=[currentSentence.id], voice='female', mediaRecorder=null,chunks=[],currentBlob=null,currentUrl=null,attempt=1,records=[],selected=-1,resetCount=0,ttsObjectUrl=null,elevenReady=false,currentEvaluated=false,browserVoices={female:null,male:null},micReady=false;
 const attemptNames=['오늘의 섀도잉','1차 재녹음','2차 재녹음','3차 재녹음'],tabNames=['오늘의 섀도잉','재녹음 1️⃣','재녹음 2️⃣','재녹음 3️⃣'];
@@ -114,8 +121,8 @@ function lockRecordingArea(locked){
 function markAttemptFailure(message){
   const label=attemptNames[attempt-1];
   $('attemptNotice').hidden=false;
-  $('attemptNotice').innerHTML=`<strong>${label} · 미채점</strong><br>${message}<br><span style="font-size:12px">마지막으로 통과한 피드백은 그대로 유지됩니다. 아래의 <strong>${tabNames[attempt-1]}</strong>을 눌러 이번 단계를 다시 시도해 주세요.</span>`;
-  $('status').textContent=`${label}은 채점되지 않았습니다. 아래 시도 버튼을 눌러 다시 녹음해 주세요.`;
+  $('attemptNotice').innerHTML=`<strong>${label} · 미채점</strong><br>${message}<br><span style="font-size:12px">마지막으로 통과한 피드백은 그대로 유지돼요. <strong>${tabNames[attempt-1]}</strong>에서 다시 도전해 주세요.</span>`;
+  $('status').textContent=`${label}은 채점되지 않았어요. 같은 재녹음 단계에서 다시 도전해 주세요.`;
   $('recordBtn').disabled=true;$('permissionBtn').disabled=true;$('stopBtn').disabled=true;$('evaluateBtn').disabled=true;renderHistory();
 }
 function setAttempt(){
@@ -173,43 +180,44 @@ function closeFeedbackPanels(){document.querySelectorAll('.fb-panel').forEach(p=
 document.querySelectorAll('.fb-toggle').forEach(btn=>btn.addEventListener('click',()=>{const panel=$(btn.dataset.panel);const open=!panel.hidden;closeFeedbackPanels();if(!open){panel.hidden=false;btn.classList.add('open','active')}}));
 function renderHistory(){
   const h=$('history');h.innerHTML='';
-  const maxVisible=Math.min(4, Math.max(1, records.length+1));
-  for(let idx=0;idx<maxVisible;idx++){
-    const target=idx+1, rec=records.find(r=>r.attempt===target);
-    const b=document.createElement('button');
-    if(rec){
-      if(idx===0){b.innerHTML=`<span style="color:#94a3b8;font-weight:800">오늘의 섀도잉</span>\n${rec.overall.toFixed(1)}점`}
-      else b.textContent=`${tabNames[idx]}\n${rec.overall.toFixed(1)}점`;
-    }else{
-      b.textContent=tabNames[idx];
-    }
-    if((rec && records.indexOf(rec)===selected)||(!rec&&target===attempt))b.classList.add('active');
-    const unlocked=target===1 || !!records.find(r=>r.attempt===target-1);
-    b.disabled=!rec && !unlocked;
-    b.onclick=()=>{if(rec)show(records.indexOf(rec));else if(unlocked)activateAttempt(target)};
-    h.appendChild(b);
+  if(!records.length){$('attemptsCard').hidden=true;return}
+  $('attemptsCard').hidden=false;
+  const nextTarget=Math.min(4, records.length+1);
+  for(let target=1;target<=records.length;target++){
+    const rec=records.find(r=>r.attempt===target);if(!rec)continue;
+    const idx=records.indexOf(rec),b=document.createElement('button');b.classList.add('completed');
+    if(target===1)b.innerHTML=`<span style="color:#9aa8b8;font-weight:800">오늘의 섀도잉</span>\n${rec.overall.toFixed(1)}점`;
+    else b.textContent=`${tabNames[target-1]}\n${rec.overall.toFixed(1)}점`;
+    if(idx===selected)b.classList.add('active');
+    b.onclick=()=>show(idx);h.appendChild(b);
+  }
+  if(records.length<4){
+    const b=document.createElement('button');b.className='next-cta';
+    b.innerHTML=`${tabNames[nextTarget-1]}<span class="subcta">다시 도전하기</span>`;
+    b.onclick=()=>activateAttempt(nextTarget);h.appendChild(b);
   }
 }
 function show(i){
-  const r=records[i];if(!r)return;selected=i;$('attemptNotice').hidden=true;$('overall').textContent=r.overall.toFixed(1);
+  const r=records[i];if(!r)return;selected=i;$('attemptNotice').hidden=true;$('overall').textContent=r.overall.toFixed(1);$('resultTitle').textContent=(r.attempt===1?'오늘의 섀도잉':`재녹음 ${retryEmoji[r.attempt-1]}`)+' · 피드백';
   const base=records[0].overall;$('delta').textContent=i===0?'첫 시도 기준':`첫 시도 대비 ${r.overall-base>=0?'+':''}${(r.overall-base).toFixed(1)}`;
   Object.entries(r.metrics).forEach(([k,v])=>metric(k,v));
   $('goodLabel').textContent=i===0?'✅ Strengths':'✅ Improved';$('weakLabel').textContent=i===0?'⚠️ Needs Work':'⚠️ Still Needs Work';$('tipLabel').textContent=i===0?'✏️ Feedback':'✏️ Next Feedback';
   $('goodCount').textContent=`${itemCount(r.good)}개`;$('weakCount').textContent=`${itemCount(r.weak)}개`;$('tipCount').textContent=`${itemCount(r.tip)}개`;
   const clickable=collectClickableTerms(r);renderFeedbackValue('goodText',r.good,clickable);renderFeedbackValue('weakText',r.weak,clickable);renderFeedbackValue('tipText',r.tip,clickable);closeFeedbackPanels();
-  $('attemptAudio').src=r.audioUrl;$('attemptAudioWrap').hidden=false;$('attemptDownloadBtn').textContent=(i===0?'오늘의 섀도잉':`${i}차 재녹음`)+' 다운로드';$('resultCard').hidden=false;renderHistory();
+  $('attemptAudio').src=r.audioUrl;$('attemptAudioWrap').hidden=false;$('attemptDownloadBtn').textContent='⬇️ 내 녹음 저장';$('resultCard').hidden=false;renderHistory();
 }
 $('evaluateBtn').onclick=async()=>{
   if(!currentBlob||currentEvaluated)return;currentEvaluated=true;$('evaluateBtn').disabled=true;
   $('quality').hidden=false;$('quality').className='quality';$('quality').textContent='녹음 품질을 먼저 확인하고 있어요…';
   try{const q=await preflight(currentBlob);if(q.issues.length){$('quality').className='quality bad';$('quality').innerHTML='<strong>평가 전 다시 녹음이 필요해요.</strong><br>'+q.issues.join('<br>');markAttemptFailure(q.issues.join(' '));fetch('/api/log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event:'NO-COMMIT',attempt,reason:'preflight',issues:q.issues,duration:q.dur})}).catch(()=>{});return}
     $('quality').className=q.warnings.length?'quality warn':'quality';$('quality').textContent=q.warnings.length?q.warnings.join(' · '):`녹음 품질 확인 완료 · ${q.dur.toFixed(1)}초`;
-    $('resultCard').hidden=false;const ov=document.createElement('div');ov.className='analysis';ov.innerHTML='<div class="analysis-box"><div class="spinner"></div><strong>발음을 자세히 분석하고 있어요.</strong><div class="small">발음의 또렷함과 말의 흐름, 강세와 리듬을 꼼꼼히 확인하고 있어요.<br>재녹음이라면 첫 도전에서 얼마나 발전했는지도 함께 분석합니다.</div></div>';$('resultCard').appendChild(ov);$('resultCard').scrollIntoView({behavior:'smooth',block:'start'});
+    $('resultCard').hidden=false;const ov=document.createElement('div');ov.className='analysis';const retryLine=attempt>1?'<div class="progress-line">첫 도전에서 얼마나 발전했는지도 함께 분석하고 있어요!</div>':'';ov.innerHTML='<div class="analysis-box"><div class="spinner"></div><strong>발음을 자세히 분석하고 있어요.</strong><div class="small">발음의 또렷함과 말의 흐름, 강세와 리듬을 꼼꼼히 확인하고 있어요.</div>'+retryLine+'</div>';$('resultCard').appendChild(ov);$('resultCard').scrollIntoView({behavior:'smooth',block:'start'});
     const d=await assess(currentBlob,q.dur),url=URL.createObjectURL(currentBlob),rec={attempt,metrics:d.metrics,overall:d.overall,good:d.good,weak:d.weak,tip:d.tip,focusTerms:d.focusTerms||[],azure:d.azure||null,details:d.details||null,audioUrl:url,blob:currentBlob};records.push(rec);show(records.length-1);$('status').textContent='평가 완료. 다음 재녹음은 아래 시도 버튼에서 시작할 수 있어요.';lockRecordingArea(true);if(d.warning){$('quality').className='quality warn';$('quality').textContent=d.warning}
   }catch(e){$('quality').className='quality bad';$('quality').textContent=e.message||'분석에 실패했습니다.';markAttemptFailure(e.message||'분석에 실패했습니다.')}
   finally{$('resultCard').querySelector('.analysis')?.remove();$('evaluateBtn').disabled=true;setAttempt()}
 }
-$('resetBtn').onclick=async()=>{if(resetCount>=3){await modal({title:'초기화 횟수 안내',body:'오늘 사용할 수 있는 초기화 3회를 모두 사용했습니다.',single:true});return}const ok=await modal({title:'오늘의 연습을 초기화할까요?',body:'초기화 시 다른 문장으로 변경되며<br>기존의 녹음파일/피드백은 삭제됩니다.<span class="modal-sub">(하루 최대 3회 가능)</span>'});if(!ok)return;resetCount++;records.forEach(r=>r.audioUrl&&URL.revokeObjectURL(r.audioUrl));records=[];selected=-1;attempt=1;setAttempt();lockRecordingArea(false);$('recordBtn').disabled=false;$('permissionBtn').disabled=false;$('history').innerHTML='';$('resultCard').hidden=true;$('attemptAudioWrap').hidden=true;$('playback').hidden=true;currentBlob=null;currentEvaluated=false;$('evaluateBtn').disabled=true;try{await nextSentence();$('status').textContent=`새 문장으로 초기화했습니다. (${resetCount}/3회 사용)`}catch(e){$('status').textContent=e.message}}
+$('attemptHelpBtn').onclick=()=>modal({title:'재녹음은 이렇게 사용해요',body:'다시 녹음해서 한 번 더 평가받아보세요!<br><span class="modal-sub">최대 3번까지 재녹음할 수 있어요.</span>',single:true});
+$('resetBtn').onclick=async()=>{if(resetCount>=3){await modal({title:'초기화 횟수 안내',body:'오늘 사용할 수 있는 초기화 3회를 모두 사용했습니다.',single:true});return}const ok=await modal({title:'오늘의 연습을 초기화할까요?',body:'초기화 시 다른 문장으로 변경되며<br>기존의 녹음파일/피드백은 삭제됩니다.<span class="modal-sub">(하루 최대 3회 가능)</span>'});if(!ok)return;resetCount++;records.forEach(r=>r.audioUrl&&URL.revokeObjectURL(r.audioUrl));records=[];selected=-1;attempt=1;setAttempt();lockRecordingArea(false);$('recordBtn').disabled=false;$('permissionBtn').disabled=false;$('history').innerHTML='';$('attemptsCard').hidden=true;$('resultCard').hidden=true;$('attemptAudioWrap').hidden=true;$('playback').hidden=true;currentBlob=null;currentEvaluated=false;$('evaluateBtn').disabled=true;try{await nextSentence();$('status').textContent=`새 문장으로 초기화했습니다. (${resetCount}/3회 사용)`}catch(e){$('status').textContent=e.message}}
 async function toWav(blob){return wav16(await decode(blob))}
 $('attemptDownloadBtn').onclick=async()=>{const r=records[selected];if(!r?.blob)return;let b=r.blob,ext='m4a';if(!(r.blob.type||'').includes('mp4')){b=await toWav(r.blob);ext='wav'}const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;const now=new Date(),yy=String(now.getFullYear()).slice(-2),mm=String(now.getMonth()+1).padStart(2,'0'),dd=String(now.getDate()).padStart(2,'0'),dateTag=`${yy}${mm}${dd}`;a.download=`shadowing_${String(r.attempt).padStart(2,'0')}_${dateTag}.${ext}`;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
 $('ttsAudio').onended=()=>$('ttsStatus').textContent='재생 완료';if(!window.isSecureContext){$('permissionHelp').hidden=false;$('status').textContent='HTTPS 또는 localhost에서 실행해 주세요.'}renderSentence();setAttempt();loadConfig();
