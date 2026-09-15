@@ -91,13 +91,17 @@ def build_feedback(azure, baseline, ref):
     word_scores=[w['accuracy'] for w in words]
     phoneme_scores=[ph['accuracy'] for w in words for ph in w['phonemes']]
     word_p25=pct(word_scores,.25,acc)
+    word_p50=pct(word_scores,.50,acc)
     phoneme_p20=pct(phoneme_scores,.20,word_p25)
+    phoneme_p35=pct(phoneme_scores,.35,word_p50)
     break_errors=[w for w in words if w['error'] in ('UnexpectedBreak','MissingBreak','Monotone')]
     mispronounced=[w for w in words if w['error']=='Mispronunciation' or w['accuracy']<78]
 
     raw={
-        'pronunciation': acc*.52 + word_p25*.30 + phoneme_p20*.18,
-        'clarity': acc*.38 + word_p25*.22 + flu*.20 + comp*.20,
+        # Keep articulation separate from fluency: a learner who reads slowly word-by-word
+        # can still pronounce individual sounds accurately even if rhythm is weak.
+        'pronunciation': word_p50*.55 + phoneme_p35*.35 + acc*.10,
+        'clarity': acc*.38 + word_p50*.30 + comp*.20 + phoneme_p35*.12,
         'stress': pros*.78 + acc*.12 + flu*.10,
         'rhythm': flu*.52 + pros*.48,
         'connection': flu*.50 + pros*.25 + word_p25*.15 + comp*.10,
@@ -130,38 +134,52 @@ def build_feedback(azure, baseline, ref):
 
     strongest=sorted(words,key=lambda w:w['accuracy'],reverse=True)[:3]
     strengths=[]; needs=[]; tips=[]
-    if comp>=95: strengths.append('문장을 빠뜨리지 않고 끝까지 읽어서 전체 완성도가 좋았습니다.')
-    if flu>=88: strengths.append('말의 흐름이 비교적 끊기지 않고 자연스럽게 이어졌습니다.')
-    if pros>=88: strengths.append('강세와 억양의 변화가 비교적 자연스럽게 들렸습니다.')
+    if comp>=95: strengths.append('문장을 빠뜨리지 않고 끝까지 읽어서 전체 완성도가 좋았어요.')
+    if flu>=88: strengths.append('말의 흐름이 크게 끊기지 않고 자연스럽게 이어졌어요.')
+    if pros>=88: strengths.append('강세와 억양의 변화가 비교적 자연스럽게 들렸어요.')
     if strongest:
         names=', '.join(w['word'] for w in strongest[:2])
-        strengths.append(f'{names} 같은 단어는 비교적 또렷하고 안정적으로 발음됐습니다.')
-    if not strengths: strengths.append('문장 전체를 끝까지 읽은 점을 바탕으로 세부 발음과 리듬을 확인했습니다.')
+        strengths.append(f'{names} 같은 단어는 비교적 또렷하고 안정적으로 발음됐어요.')
+    if not strengths: strengths.append('문장을 끝까지 읽은 점은 좋아요. 이제 세부 발음과 리듬을 조금씩 다듬어 볼 수 있어요.')
 
-    for w in weak_words[:3]:
-        if w['accuracy']>=90 and w['error']=='None': continue
+    # Aggregate similar word-level issues instead of repeating the same sentence for every word.
+    weak_sound_words=[]
+    unstable_words=[]
+    for w in weak_words[:4]:
+        if w['accuracy']>=90 and w['error']=='None':
+            continue
         low_ph=sorted(w['phonemes'],key=lambda x:x['accuracy'])[:2]
         has_low_sound=any(x['accuracy']<88 for x in low_ph)
-        if has_low_sound:
-            needs.append(f'{w["word"]}에서 일부 소리가 흐리거나 한국어식으로 들려, 단어 전체가 덜 또렷하게 인식됐습니다.')
-        else:
-            needs.append(f'{w["word"]}의 발음이 다른 단어보다 덜 안정적으로 들렸습니다.')
-    if break_errors:
-        names=', '.join(w['word'] for w in break_errors[:3])
-        needs.append(f'{names} 근처에서 끊어 읽는 위치나 이어지는 흐름이 조금 어색했습니다.')
-    if focus_rank and focus_rank[0][0]<88:
-        needs.append(f'{focus_rank[0][1]} 부분은 한 덩어리로 자연스럽게 이어 읽는 연습이 더 필요합니다.')
-    if flu<88: needs.append('단어와 단어 사이에 멈춤이 생기거나 속도가 고르지 않아 문장 흐름이 조금 끊겼습니다.')
-    if pros<88: needs.append('강조해야 할 단어와 약하게 읽을 부분의 차이가 작아 전체 억양이 다소 평평하게 들릴 수 있습니다.')
-    needs=needs[:4] or ['큰 오류는 적었지만, 더 자연스러운 리듬과 개별 발음의 일관성을 위해 한 번 더 다듬어 볼 수 있습니다.']
+        (weak_sound_words if has_low_sound else unstable_words).append(w['word'])
+    if weak_sound_words:
+        names=', '.join(weak_sound_words[:4])
+        needs.append(f'{names}에서는 몇몇 자음·모음이 목표 발음보다 덜 분명하게 들렸어요. 단어의 첫소리와 끝소리를 조금 더 선명하게 살려 보면 좋아요.')
+    elif unstable_words:
+        names=', '.join(unstable_words[:4])
+        needs.append(f'{names}는 다른 단어보다 발음이 조금 덜 안정적으로 들렸어요. 사전 발음을 한 번 확인한 뒤 같은 입모양과 소리 길이로 다시 말해 보세요.')
+
+    if break_errors or flu<82:
+        needs.append('단어 하나씩 따로 읽는 느낌이 조금 강해 문장 흐름이 끊겨 들렸어요. 의미가 이어지는 부분은 한 호흡으로 묶어 읽어 보면 더 자연스러워요.')
+    elif flu<88:
+        needs.append('몇몇 단어 사이의 속도 차이가 커서 문장 흐름이 살짝 끊겨 들렸어요. 앞뒤 단어를 조금 더 부드럽게 이어 보세요.')
+    if focus_rank and focus_rank[0][0]<84:
+        needs.append(f'{focus_rank[0][1]} 부분은 단어를 하나씩 분리하기보다 한 덩어리처럼 이어 읽으면 더 자연스러워요.')
+    if pros<84:
+        needs.append('강하게 읽을 단어와 가볍게 지나갈 단어의 차이가 아직 작아요. 핵심 단어만 살짝 강조하고 나머지는 힘을 빼 보세요.')
+    elif pros<90:
+        needs.append('억양 변화가 조금 더 살아나면 훨씬 자연스럽게 들릴 수 있어요. 문장 안에서 가장 중요한 단어 한두 개만 골라 강조해 보세요.')
+    needs=needs[:4] or ['큰 오류는 많지 않았어요. 다음 시도에서는 발음의 선명함과 문장 리듬을 한 단계 더 다듬어 보세요.']
 
     target = weak_terms[0] if weak_terms else (focus_items[0] if focus_items else '문장 전체')
-    tips.append(f'{target}를 천천히 2~3번 또렷하게 읽은 뒤, 문장 안에서 자연스럽게 이어서 말해 보세요.')
-    if break_errors or flu<88: tips.append('단어 하나씩 끊기보다 의미가 이어지는 부분을 묶어 한 호흡으로 읽고, 문장부호에서만 자연스럽게 쉬어 보세요.')
-    if pros<88: tips.append('핵심 단어는 조금 더 힘을 주고, 관사·전치사·대명사는 짧고 가볍게 읽어 문장 리듬을 만들어 보세요.')
+    if target!='문장 전체':
+        tips.append(f'{target}를 2~3번 천천히 또렷하게 읽은 뒤, 같은 소리를 유지한 채 문장 속에 다시 넣어 말해 보세요.')
+    if break_errors or flu<88:
+        tips.append('단어 하나씩 끊기보다 의미가 이어지는 부분을 묶어 읽고, 쉼표나 문장 끝에서만 자연스럽게 쉬어 보세요.')
+    if pros<88:
+        tips.append('핵심 단어에는 힘을 조금 주고, 관사·전치사·대명사는 짧고 가볍게 지나가면 문장 리듬이 더 살아나요.')
     if weak_words:
         w=weak_words[0]
-        tips.append(f'{w["word"]}를 눌러 기준 발음을 들어 본 뒤, 자신의 녹음과 소리의 시작과 끝을 비교해 보세요.')
+        tips.append(f'{w["word"]}를 눌러 기준 발음을 들은 뒤, 자신의 녹음과 비교하면서 첫소리·끝소리와 소리 길이를 맞춰 보세요.')
     tips=tips[:4]
 
     baseline_delta=None
@@ -172,15 +190,15 @@ def build_feedback(azure, baseline, ref):
         improved=sorted(delta.items(),key=lambda kv:kv[1],reverse=True)
         if improved and improved[0][1]>0:
             label={'clarity':'명료도','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[improved[0][0]]
-            strengths.insert(0,f'첫 시도보다 {label}가 {improved[0][1]:+.1f}점 좋아졌습니다.')
+            strengths.insert(0,f'첫 시도보다 {label}가 {improved[0][1]:+.1f}점 좋아졌어요.')
         worsened=sorted(delta.items(),key=lambda kv:kv[1])
         if worsened and worsened[0][1]<0:
             label={'clarity':'명료도','pronunciation':'개별 발음 정확도','stress':'강세','rhythm':'리듬','connection':'자연스러운 연결'}[worsened[0][0]]
-            needs.insert(0,f'첫 시도와 비교하면 {label}는 {worsened[0][1]:+.1f}점으로 아직 안정적이지 않습니다.')
+            needs.insert(0,f'첫 시도와 비교하면 {label}가 {abs(worsened[0][1]):.1f}점 낮아졌어요. 이번에는 이 부분을 조금 더 천천히 다듬어 보세요.')
 
     details={
         'azure':{'accuracy':acc,'fluency':flu,'completeness':comp,'prosody':pros},
-        'wordP25':round(word_p25,1),'phonemeP20':round(phoneme_p20,1),
+        'wordP25':round(word_p25,1),'wordP50':round(word_p50,1),'phonemeP20':round(phoneme_p20,1),'phonemeP35':round(phoneme_p35,1),
         'weakWords':weak_words,'breakErrors':break_errors,'baselineDelta':baseline_delta,
         'focusScores':[{'text':p,'score':round(s,1)} for s,p in focus_rank]
     }
