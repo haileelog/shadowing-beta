@@ -1,4 +1,4 @@
-# Shadowing Lab v1.3.7
+# Shadowing Lab v1.3.8
 
 Core beta build with Azure Pronunciation Assessment via the official Azure Speech SDK.
 
@@ -44,7 +44,7 @@ The beta currently has no persistent database. Successful attempt persistence wi
 - 사용자 관심사 변경과 무관하게 과거 세션에는 사용 당시 sentence_id를 저장해 카테고리 분석/도전율/재녹음률 통계를 낼 수 있게 합니다.
 
 
-## v1.3.7
+## v1.3.8
 - Lock recording controls after a successful assessment until the next retry button is pressed.
 - Keep failed attempts uncommitted and show a clear in-session “미채점” notice.
 - Compare retry feedback against the first successful attempt, not the immediately previous attempt.

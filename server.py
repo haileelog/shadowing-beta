@@ -255,9 +255,9 @@ def azure_sdk_recognize(audio_bytes, ref, request_id):
         if not pa: raise RuntimeError('Azure가 음성은 인식했지만 PronunciationAssessment 점수를 반환하지 않았습니다.')
 
         coverage,length_ratio,ref_count,hyp_count=lcs_coverage(ref,plain_text)
-        # Replace PA completeness with an independent coverage score to avoid false 422s
-        # caused by reference-alignment quirks.
-        pa['CompletenessScore']=round(coverage*100,1)
+        # Keep Azure Pronunciation Assessment completeness as the learner-facing signal.
+        # Plain STT coverage is only a diagnostic hint because strong non-native accents
+        # can cause transcription mismatches even when the learner read every word.
         n['PronunciationAssessment']=pa
         log('AZURE-ASSESS',{
             'requestId':request_id,'plainTranscript':plain_text,'assessmentDisplay':n.get('Display') or azure.get('DisplayText',''),
@@ -329,19 +329,19 @@ class H(SimpleHTTPRequestHandler):
             audio=base64.b64decode(body['audioBase64']); ref=body['referenceText']
             azure,plain_text,coverage,length_ratio=azure_sdk_recognize(audio,ref,request_id)
 
-            # Strong omission/truncation gate. Keep it conservative to avoid rejecting accented but complete reads.
-            if coverage < 0.48 and length_ratio < 0.72:
-                log('NO-COMMIT',{'requestId':request_id,'attempt':attempt,'reason':'incomplete-transcript','coverage':round(coverage,3),'transcript':plain_text})
-                return self.j(422,{'error':'기준 문장의 상당 부분이 누락되었거나 문장이 끝까지 읽히지 않았습니다. 이번 시도는 채점하지 않았습니다.','recognizedText':plain_text,'coverage':round(coverage*100,1)})
-
+            # Do not reject a complete read merely because plain STT struggled with an accent.
+            # Client-side audio checks already reject silence / implausibly short recordings.
+            # Here, transcript coverage is diagnostic only; pronunciation quality belongs in the score.
             nbest=(azure.get('NBest') or [{}])[0]; pa=nbest.get('PronunciationAssessment') or {}
             m,o,g,w,t,f,details=build_feedback(azure,body.get('baseline'),ref)
             warning=None
-            if coverage < .8:
-                warning=f'문장 완성도가 약 {coverage*100:.0f}%로 인식되었습니다. 일부 단어가 빠졌거나 다르게 인식되었을 수 있어요.'
+            if coverage < .55:
+                warning='일부 단어가 실제 발음과 다르게 인식됐어요. 비원어민 발음 특성일 수 있어 채점은 계속 진행했습니다.'
+            elif coverage < .78:
+                warning='몇몇 단어가 다르게 인식됐지만, 발음 평가는 정상적으로 진행했습니다.'
             log('ASSESS-SUCCESS',{'requestId':request_id,'attempt':attempt,'overall':o,'metrics':m,'coverage':round(coverage,3),'transcript':plain_text,'azure':details.get('azure'),'wordP25':details.get('wordP25'),'phonemeP20':details.get('phonemeP20'),'weakWords':[{'word':x.get('word'),'accuracy':x.get('accuracy'),'error':x.get('error')} for x in details.get('weakWords',[])[:4]]})
             log('COMMIT-DEFERRED',{'requestId':request_id,'attempt':attempt,'reason':'DB not connected yet; browser keeps successful attempt only'})
-            return self.j(200,{'metrics':m,'overall':o,'good':g,'weak':w,'tip':t,'focusTerms':f,'warning':warning,'details':details,'azure':{'accuracy':pa.get('AccuracyScore'),'fluency':pa.get('FluencyScore'),'completeness':round(coverage*100,1),'prosody':pa.get('ProsodyScore'),'recognizedText':plain_text}})
+            return self.j(200,{'metrics':m,'overall':o,'good':g,'weak':w,'tip':t,'focusTerms':f,'warning':warning,'details':details,'azure':{'accuracy':pa.get('AccuracyScore'),'fluency':pa.get('FluencyScore'),'completeness':pa.get('CompletenessScore'),'transcriptCoverage':round(coverage*100,1),'prosody':pa.get('ProsodyScore'),'recognizedText':plain_text}})
         except Exception as e:
             log('NO-COMMIT',{'requestId':request_id,'reason':'assessment-error','error':str(e)})
             return self.j(500,{'error':f'발음 평가 처리 중 오류가 발생했습니다: {e}','requestId':request_id})
@@ -351,7 +351,7 @@ class H(SimpleHTTPRequestHandler):
 
 if __name__=='__main__':
     os.chdir(ROOT); port=int(os.getenv('PORT','8000')); host=os.getenv('HOST','0.0.0.0')
-    print(f'Shadowing Lab v1.3.7 → http://localhost:{port}', flush=True)
+    print(f'Shadowing Lab v1.3.8 → http://localhost:{port}', flush=True)
     print('Azure:', 'READY' if AZURE_KEY and AZURE_REGION else 'PREVIEW MODE', '/ SDK:', 'READY' if speechsdk else 'MISSING', flush=True)
     print('ElevenLabs:', 'READY' if ELEVEN_KEY and (VOICE_IDS['female'] or VOICE_IDS['male']) else 'BROWSER FALLBACK', flush=True)
     ThreadingHTTPServer((host,port),H).serve_forever()
